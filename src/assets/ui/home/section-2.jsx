@@ -5,7 +5,7 @@ export default function WhoWeAre(){
     return(
         <div className="container mx-auto flex lg:grid lg:grid-cols-2 gap-6 py-24">
             <div className="relative">
-                <img className="h-140 w-fit" src="/images/home/5.jpg" alt="Who we are - ODS Dispatch"/>
+                <img className="h-140 w-fit object-bottom" src={`${import.meta.env.VITE_IMAGES_SERVER}/images/home/5.jpg`} alt="Who we are - ODS Dispatch"/>
                 <div className="flex gap-10 absolute bottom-8 left-40 mx-auto">
                     <div className="flex flex-col gap-2 bg-red-700 py-8 px-6 text-neutral-100">
                         <h2 className="text-5xl font-bold text-shadow-lg">10+ </h2>

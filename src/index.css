@@ -1,13 +1,23 @@
 @import "tailwindcss";
 :root {
   --popup-bg: #00000092;
-  --dull-transparent: #9d9d9d4c;
+  --light-redish-bg: #3c02026e;
+  --dark-redish-bg: #3c0202b7;
+  --light-bluish-bg: #05023c6e;
+  --dark-bluish-bg: #030130b7;
+  --dark-bluish-black: #001534;
+  --grayish-transparent: #9d9d9d4c;
   --home-bg-1:url(/images/home/4.jpg);
 }
 
 @theme inline{
   --color-popup-bg: var(--popup-bg);
-  --color-transparent-1: var(--dull-transparent);
+  --color-dark-blue: var(--dark-bluish-black);
+  --color-transparent-blue-1: var(--light-bluish-bg);
+  --color-transparent-blue-2: var(--dark-bluish-bg);
+  --color-transparent-red-1: var(--light-redish-bg);
+  --color-transparent-red-2: var(--dark-redish-bg);
+  --color-transparent-1: var(--grayish-transparent);
   --background-home-1: var(--home-bg-1);
 }
 

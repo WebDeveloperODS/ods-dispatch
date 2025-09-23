@@ -10,7 +10,7 @@ export function H2({children,extraCss}){
 }
 export function H3({children,extraCss}){
     return(
-        <h3 className={`${extraCss} text-lg tracking-normal`}>{children}</h3>
+        <h3 className={`${extraCss} text-lg lg:text-xl tracking-normal`}>{children}</h3>
     )
 }
 export function TagHead({children, extraCss}){
