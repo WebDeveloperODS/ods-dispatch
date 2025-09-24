@@ -6,6 +6,9 @@ import PointingServices from '../assets/ui/home/section-4'
 import BenefitsOfUsingODS from '../assets/ui/home/section-5'
 import TruckTypes from '../assets/ui/home/section-6'
 import ODS_Best_Option from '../assets/ui/home/section-7'
+import GettingStartedWithODS from '../assets/ui/home/section-8'
+import PricePerPackage from '../assets/ui/home/section-9'
+import ContactForm from '../assets/ui/home/section-10'
 
 const Home = () => {
   return (
@@ -17,6 +20,9 @@ const Home = () => {
       <BenefitsOfUsingODS />
       <TruckTypes />
       <ODS_Best_Option />
+      <GettingStartedWithODS />
+      <PricePerPackage />
+      <ContactForm />
     </>
   )
 }

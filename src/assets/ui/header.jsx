@@ -35,7 +35,7 @@ export default function Header() {
           <a href="/" className="text-neutral-100 font-[500] text-sm uppercase hover:text-neutral-100 hover:stroke-3 cursor-pointer">Night dispatch</a>
         </div>
       </div>
-      <div className={`w-full tranistion-all ease-in-out duration-300 ${callSticky ? 'fixed top-0 z-60 bg-blue-950/95 py-1 translate-y-0': 'absolute top-7 z-10'} left-0 right-0 `}>
+      <div className={`w-full tranistion-all ease-in-out duration-300 ${callSticky ? 'fixed top-0 z-60 bg-white py-1 translate-y-0 shadow-sm shadow-neutral-300': 'absolute top-7 z-10'} left-0 right-0 `}>
         <div className={`container flex justify-between items-center`}>
           <div className="flex items-center">
             <img src={logo} alt="logo" className={`${callSticky ? 'h-22':'h-28'} w-auto`}/>
@@ -45,22 +45,22 @@ export default function Header() {
               {HeaderMenu.map((menu, index) => (
                 <li key={index} className="flex items-center">
                   <a
-                    className="text-neutral-100 font-semibold text-sm uppercase hover:border-b-2 hover:border-red-800"
+                    className={`${callSticky ? 'text-neutral-800' :'text-neutral-100'} font-semibold text-sm uppercase hover:border-b-2 hover:border-red-800`}
                     href={menu.link}
                   >
                     {menu.title}
                   </a>
                   {index !== HeaderMenu.length - 1 && (
-                    <div className="border-r border-neutral-400 h-4 -mt-1 ml-5" />
+                    <div className={`border-r ${callSticky ? 'border-neutral-800' :'border-neutral-400'} h-4 -mt-1 ml-5`} />
                   )}
                 </li>
               ))}
             </ul>
           </nav>
           <div className="flex items-center gap-5">
-            <PhoneCall className="h-[1.1em] w-auto cursor-pointer text-neutral-200 hover:text-red-800 hover:stroke-3"/>
+            <PhoneCall className={`h-[1.1em] w-auto cursor-pointer ${callSticky ? 'text-neutral-800':'text-neutral-200'} hover:text-red-800 hover:stroke-3`}/>
             <div className="border-r-1 border-neutral-400 h-4 "/>
-            <MessageSquareText className="h-[1.1em] w-auto cursor-pointer text-neutral-200 hover:text-red-800 hover:stroke-3"/>
+            <MessageSquareText className={`h-[1.1em] w-auto cursor-pointer ${callSticky ? 'text-neutral-800':'text-neutral-200'} hover:text-red-800 hover:stroke-3`}/>
           </div>
         </div>
       </div>
