@@ -6,13 +6,14 @@ import { ChevronDown } from "lucide-react";
 import { useLocation } from "react-router-dom";
 import { FaPhoneVolume } from "react-icons/fa6";
 import { AiFillMessage } from "react-icons/ai";
+import { HashLink } from "react-router-hash-link";
 // import SideBar from "./sidebar"
 
 export default function Header() {
   const [callSticky, setCallSticky] = useState(false);
   const [openDropIndex, setOpenDropIndex] = useState(null); // Track which dropdown is open by index
   const location = useLocation()
-  const [homeCheck , setHomeCheck] = useState(true)
+  // const [homeCheck , setHomeCheck] = useState(true)
   useEffect(() => {
     const handleScroll = () => {
       let currentPosition = window.pageYOffset 
@@ -38,11 +39,11 @@ export default function Header() {
     setOpenDropIndex(null);
   }
 
-  useEffect(() => {
-    if(location.pathname !== '/'){
-      setHomeCheck(false)
-    }
-  },[location])
+  // useEffect(() => {
+  //   if(location.pathname !== '/'){
+  //     setHomeCheck(false)
+  //   }
+  // },[location])
 
   return (
     <>
@@ -94,13 +95,14 @@ export default function Header() {
                     >
                       <div className="py-2">
                         {menu.childPages.map((child, childIndex) => (
-                          <a 
+                          <HashLink 
                             key={childIndex}
-                            href={child.link || '#'}
+                            smooth
+                            to={child.link || '#'}
                             className="block px-4 py-2 font-semibold text-sm text-neutral-700 hover:bg-red-50 hover:text-red-800 transition-colors duration-150 capitalize"
                           >
                             {child.title}
-                          </a>
+                          </HashLink>
                         ))}
                       </div>
                       {/* Arrow pointer */}

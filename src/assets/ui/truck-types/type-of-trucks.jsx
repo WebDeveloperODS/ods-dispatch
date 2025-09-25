@@ -61,9 +61,9 @@ const T_O_T_Descriptions = () => {
     ];
 
     return (
-    <div className="py-24">
+    <div className="py-24" id="">
         <div className="container relative rounded-xl bg-cover bg-fixed bg-center" style={{backgroundImage:'url(/images/truck-types/bg.jpg)'}}>
-            <div className="bg-neutral-800/60 p-10 rounded-xl flex flex-col gap-3 items-center justify-center min-h-30">
+            <div id="dry-vans" className="bg-neutral-800/60 p-10 rounded-xl flex flex-col gap-3 items-center justify-center min-h-30">
                 <H2 extraCss={'uppercase tracking-wider text-neutral-100 underline underline-offset-5 decoration-3 decoration-red-800 text-shadow-lg/30'}>The Equipment We Dispatch Across the Nation</H2>
                 <P1 extraClass="text-neutral-100 capitalize font-semibold text-shadow-lg/30 tracking-wide">We provide expert dispatch services for all major truck types, ensuring smooth nationwide operations.</P1>
             </div>
