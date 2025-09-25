@@ -1,17 +1,14 @@
 import { useState } from "react"
-import logo from '/images/logo.png'
-import { HeaderMenu } from "../../lib/headerMenu"
-import { PhoneCall } from "lucide-react"
-import { MessageSquareText } from "lucide-react"
+import logo from '/images/logo-3.png'
 import { useEffect } from "react"
+import SideBar from "./sidebar"
 export default function Header() {
   const [callSticky, setCallSticky] = useState(false);
 
   useEffect(() => {
-    let lastPosition = window.pageYOffset;
     const handleScroll = () => {
       let currentPosition = window.pageYOffset 
-      console.log('Current position: ', currentPosition)
+      // console.log('Current position: ', currentPosition)
       if(currentPosition > 940){
         setCallSticky(true)
       }else{
@@ -35,17 +32,17 @@ export default function Header() {
           <a href="/" className="text-neutral-100 font-[500] text-sm uppercase hover:text-neutral-100 hover:stroke-3 cursor-pointer">Night dispatch</a>
         </div>
       </div>
-      <div className={`w-full tranistion-all ease-in-out duration-300 ${callSticky ? 'fixed top-0 z-60 bg-white py-1 translate-y-0 shadow-sm shadow-neutral-300': 'absolute top-7 z-10'} left-0 right-0 `}>
+      <div className={`w-full tranistion-all ease-in-out duration-0 ${callSticky ? 'fixed top-0 z-60 bg-white py-1 translate-y-0 shadow-sm shadow-neutral-300': 'absolute top-7 z-10'} left-0 right-0 `}>
         <div className={`container flex justify-between items-center`}>
-          <div className="flex items-center">
-            <img src={logo} alt="logo" className={`${callSticky ? 'h-22':'h-28'} w-auto`}/>
+          <div className="flex items-center py-1">
+            <img src={logo} alt="logo" className={`${callSticky ? 'h-26':'h-30'} w-auto cursor-pointer`} onClick={() => window.location.href='/'}/>
           </div>
-          <nav>
+          {/* <nav>
             <ul className="flex items-center justify-center gap-5">
               {HeaderMenu.map((menu, index) => (
                 <li key={index} className="flex items-center">
                   <a
-                    className={`${callSticky ? 'text-neutral-800' :'text-neutral-100'} font-semibold text-sm uppercase hover:border-b-2 hover:border-red-800`}
+                    className={`${callSticky ? 'text-neutral-800' :'text-neutral-100'} font-semibold text-sm uppercase ${menu.active === true ? 'text-red-700!':''} hover:border-b-2 hover:border-red-800`}
                     href={menu.link}
                   >
                     {menu.title}
@@ -56,11 +53,12 @@ export default function Header() {
                 </li>
               ))}
             </ul>
-          </nav>
+          </nav> */}
           <div className="flex items-center gap-5">
-            <PhoneCall className={`h-[1.1em] w-auto cursor-pointer ${callSticky ? 'text-neutral-800':'text-neutral-200'} hover:text-red-800 hover:stroke-3`}/>
+            <SideBar removeWhite={callSticky}/>
+            {/* <PhoneCall className={`h-[1.1em] w-auto cursor-pointer ${callSticky ? 'text-neutral-800':'text-neutral-200'} hover:text-red-800 hover:stroke-3`}/>
             <div className="border-r-1 border-neutral-400 h-4 "/>
-            <MessageSquareText className={`h-[1.1em] w-auto cursor-pointer ${callSticky ? 'text-neutral-800':'text-neutral-200'} hover:text-red-800 hover:stroke-3`}/>
+            <MessageSquareText className={`h-[1.1em] w-auto cursor-pointer ${callSticky ? 'text-neutral-800':'text-neutral-200'} hover:text-red-800 hover:stroke-3`}/> */}
           </div>
         </div>
       </div>

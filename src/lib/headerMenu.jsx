@@ -6,27 +6,64 @@ export const HeaderMenu=[
     },
     {
         title: 'About us',
-        link: '/',
+        link: '/about-ods-dispatch',
         active: false,
     },
     {
         title: 'Truck types',
-        link: '/',
+        link: '/truck-types',
         active: false,
+        childPages: [
+            {
+                title: 'Dry vans',
+                link: '/truck-types#dry-vans',
+                active: false,
+            },        
+            {
+                title: 'Straight box',
+                link: '/truck-types#straight-box',
+                active: false,
+            },        
+            {
+                title: 'Flatbed',
+                link: '/truck-types#flatbed',
+                active: false,
+            },        
+            {
+                title: 'Hotshot',
+                link: '/truck-types#hotshot',
+                active: false,
+            },        
+            {
+                title: 'Reefer',
+                link: '/truck-types#reefer',
+                active: false,
+            },        
+            {
+                title: 'Step deck',
+                link: '/truck-types#step-deck',
+                active: false,
+            }, 
+            {
+                title: 'RGN & Heavy haul',
+                link: '/truck-types#rgn-heavy-haul',
+                active: false,
+            }
+        ]
     },
     {
-        title: 'Carrier Setup',
-        link: '/',
+        title: 'Carriers Setup',
+        link: '/carriers-setup',
         active: false,
     },
-    {
-        title: 'Blog',
-        link: '/',
-        active: false,
-    },
+    // {
+    //     title: 'Blog',
+    //     link: '/',
+    //     active: false,
+    // },
     {
         title: 'Contact Us',
-        link: '/',
+        link: '/to-contact-ods-dispatch',
         active: false,
     },
 ]

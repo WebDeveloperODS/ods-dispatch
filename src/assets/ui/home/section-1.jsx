@@ -6,7 +6,7 @@ import { FunctionButton, PageButton } from '../components/buttons'
 import { useState } from 'react'
 
 const IntroWithSlider = () => {
-    const [quoteCalled, setQuoteCalled] = useState(false);
+  const [quoteCalled, setQuoteCalled] = useState(false);
   return (
     <div>
       <SlideShow>
@@ -22,8 +22,8 @@ const IntroWithSlider = () => {
                     From negotiating the best rates and handling paperwork to planning efficient routes and providing 24/7 driver support, we manage the details so you can focus on driving. With ODS Dispatch, you don’t just haul freight — you maximize every mile.
                 </P1>
                 <div className='flex gap-7 mt-4'>
-                    <PageButton extraClass={'text-blue-700 bg-neutral-100 border-2 hover:bg-blue-700 hover:text-neutral-100 hover:border-transparent'} addressLink={'/'}>Explore Our Service</PageButton>
-                    <FunctionButton extraClass={'bg-red-800 text-neutral-100 border-2 border-transparent hover:text-red-800 hover:bg-neutral-100 hover:border-red-800'} actionCall={setQuoteCalled}>Request a quote</FunctionButton>
+                    <PageButton extraClass={'text-neutral-100 border-2 bg-blue-950 border-transparent transition-all ease-in-out duration-300 hover:scale-[1.05]'} addressLink={'/'}>Explore Our Service</PageButton>
+                    <FunctionButton extraClass={'bg-red-800 text-neutral-100 border-2 border-transparent transition-all ease-in-out duration-300 hover:scale-[1.05]'} actionCall={setQuoteCalled}>Request a quote</FunctionButton>
                 </div>
             </div>
         </div>

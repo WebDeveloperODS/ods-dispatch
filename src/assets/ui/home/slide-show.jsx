@@ -21,7 +21,7 @@ export default function SlideShow({children}){
             {BgImages.map((image, index) => (
                 <div
                     key={index}
-                    className={`absolute inset-0 -z-10 transition-all duration-3000 ease-in-out ${
+                    className={`absolute inset-0 z-0 transition-all duration-3000 ease-in-out ${
                         index === currentSlide ? 'opacity-100' : 'opacity-0'
                     }`}
                     style={{

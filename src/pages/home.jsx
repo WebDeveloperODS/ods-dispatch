@@ -12,7 +12,7 @@ import ContactForm from '../assets/ui/home/section-10'
 
 const Home = () => {
   return (
-    <>
+    <div className='bg-white'>
       <IntroWithSlider />
       <WhoWeAre />
       <ThreeContents />
@@ -23,7 +23,7 @@ const Home = () => {
       <GettingStartedWithODS />
       <PricePerPackage />
       <ContactForm />
-    </>
+    </div>
   )
 }
 

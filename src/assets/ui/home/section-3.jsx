@@ -35,7 +35,7 @@ export default function ThreeContents(){
                         <div 
                             onMouseEnter={() => setMouseOn(index)} 
                             onMouseLeave={() => setMouseOn(-1)} 
-                            className={`${mouseOn === index ? item.bg_overlay[0] : item.bg_overlay[1]} absolute inset-0 flex flex-col px-6 md:px-8 lg:px-14 justify-center items-center transition-all ease-in-out duration-500 cursor-pointer z-10`}
+                            className={`${mouseOn === index ? item.bg_overlay[0] : item.bg_overlay[1]} absolute inset-0 flex flex-col px-6 md:px-8 lg:px-14 justify-center items-center transition-all ease-in-out duration-500 cursor-pointer z-5`}
                         >
                             <H3 extraCss={'font-semibold text-white mb-4 border-b-2 border-red-500 pb-2'}>{item.title}</H3>
                             <P1 extraClass="font-normal text-gray-100 capitalize tracking-wider mb-4">{item.tagline}</P1>

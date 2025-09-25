@@ -67,7 +67,7 @@ export default function TruckTypes(){
                 }
             </div>
             {
-                trucks.map((truck,index) => <div style={{backgroundImage: `url(${truck.image})`}} 
+                trucks.map((truck,index) => <div key={index} style={{backgroundImage: `url(${truck.image})`}} 
                 className={`relative bg-cover bg-no-repeat bg-left min-h-140 w-[90%] rounded-xl ${activeTitle===index ? 'opacity-full flex':'opacity-0 hidden'} transition-all ease-in-out duration-400`}>
                     <div className="absolute top-0 left-0 w-full h-full rounded-xl inset-0 bg-neutral-800/20 pl-10 flex items-center">
                         <div className="flex flex-col max-w-100 w-100 gap-2 bg-neutral-800/80 p-8 rounded-xl shadow-sm shadow-neutral-800">

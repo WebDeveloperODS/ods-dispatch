@@ -1,12 +1,14 @@
 import React from 'react'
 import Header from './header'
 import Footer from './footer'
+import JumpToTop from './components/jump-to-top'
 
 const WebLayout = ({children}) => {
   return (
-    <div className="flex flex-col">
+    <div className='relative'>
         <Header />
         {children}
+        <JumpToTop />
         <Footer />
     </div>
   )
