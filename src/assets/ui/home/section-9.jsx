@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
+import { H2 } from "../components/heading-1";
+import { P1 } from "../components/descriptions";
 
-// Mock components since the original imports aren't available
-const P1 = ({ children, extraClass = "" }) => <p className={`text-lg ${extraClass}`}>{children}</p>;
-const H2 = ({ children, extraCss = "" }) => <h2 className={`text-3xl font-bold ${extraCss}`}>{children}</h2>;
 
 export default function TestimonialsDisplay(){
     const testimonials = [

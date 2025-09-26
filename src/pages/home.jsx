@@ -7,7 +7,7 @@ import BenefitsOfUsingODS from '../assets/ui/home/section-5'
 import TruckTypes from '../assets/ui/home/section-6'
 import ODS_Best_Option from '../assets/ui/home/section-7'
 import GettingStartedWithODS from '../assets/ui/home/section-8'
-import PricePerPackage from '../assets/ui/home/section-9'
+import TestimonialsDisplay from '../assets/ui/home/section-9'
 import ContactForm from '../assets/ui/home/section-10'
 
 const Home = () => {
@@ -21,7 +21,7 @@ const Home = () => {
       <TruckTypes />
       <ODS_Best_Option />
       <GettingStartedWithODS />
-      <PricePerPackage />
+      <TestimonialsDisplay />
       <ContactForm />
     </div>
   )

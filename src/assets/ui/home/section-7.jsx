@@ -54,8 +54,10 @@ export default function ODS_Best_Option(){
                                 <span className="font-medium capitalize">
                                     <span className="decoration-2 font-semibold decoration-red-500 underline underline-offset-3">
                                         ODS Dispatch
-                                    </span> makes trucking operations smoother and smarter.
-                                </span> Unlike companies that take weeks to train new staff, our dispatchers bring proven expertise from day one. With years of hands-on industry experience, we handle load management, broker communication, and paperwork seamlessly—so you can focus on driving and growing. Serving carriers and owner-operators across America, ODS Dispatch ensures you get the best loads, the best rates, and the dedicated support your business deserves.
+                                    </span> keeps trucking simple and profitable.
+                                </span> Unlike companies that spend weeks training new staff, our dispatchers bring proven expertise from day one. With years of hands-on industry experience, we manage load planning, broker communications, and paperwork effortlessly—freeing you to focus on driving and growing your business.
+                                <br/><br/>
+                                Proudly serving carriers and owner-operators across the U.S., ODS Dispatch is committed to securing the best loads, negotiating top rates, and providing the dedicated support your trucking business deserves.
                             </P1>
                             
                             <div className="mt-4">

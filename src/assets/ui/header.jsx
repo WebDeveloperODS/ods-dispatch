@@ -14,14 +14,19 @@ export default function Header() {
   const [openDropIndex, setOpenDropIndex] = useState(null); // Track which dropdown is open by index
   const location = useLocation()
   // const [homeCheck , setHomeCheck] = useState(true)
+  
+  
   useEffect(() => {
+    let lastPosition = window.pageYOffset;
     const handleScroll = () => {
       let currentPosition = window.pageYOffset 
-      // console.log('Current position: ', currentPosition)
-      if(currentPosition > 940){
+      // console.log('Current position: ', currentPosition, lastPosition)
+      if(currentPosition > 800 && lastPosition > currentPosition){
         setCallSticky(true)
+        lastPosition=currentPosition
       }else{
         setCallSticky(false)
+        lastPosition=currentPosition
       }
     }
     window.addEventListener('scroll', handleScroll, { passive: true });

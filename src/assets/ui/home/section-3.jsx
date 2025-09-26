@@ -16,8 +16,8 @@ export default function ThreeContents(){
             description: 'Promoting healthy interactions, teamwork, and professional respect to achieve efficiency, satisfaction, and long-term success together.',   
             bg_image:`${SERVER}/images/home/6.png`, bg_overlay: ['bg-transparent-red-2','bg-transparent-red-1'], button: {title:'Services by ODS', button_bg: 'bg-blue-800 hover:bg-blue-900 text-white', button_link:'/'}
         },{
-            title: 'Optimizing Loads, Maximizing Profits', tagline: 'Delivering smart strategies for efficient load management.',
-            description: 'Our tailored solutions ensure every load is optimized for cost-effectiveness, timely delivery, and higher profitability for your business.',   
+            title: 'Optimizing Business, Maximizing Profits', tagline: 'Delivering smart strategies for efficient business by using media growth.',
+            description: 'Helping trucking companies thrive with smart dispatch solutions and media-driven strategies that boost efficiency, visibility, and profitability.',   
             bg_image:`${SERVER}/images/home/7.jpg`, bg_overlay: ['bg-transparent-blue-2','bg-transparent-blue-1'], button: {title:'Connect with ODS', button_bg: 'bg-red-600 hover:bg-red-700 text-white', button_link:'/'}
         },
     ]

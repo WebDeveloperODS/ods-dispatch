@@ -48,6 +48,10 @@ export const HeaderMenu=[
                 title: 'RGN & Heavy haul',
                 link: '/truck-types#rgn-heavy-haul',
                 active: false,
+            },{
+                title: 'Power only',
+                link: '/truck-types#power-only',
+                active: false,
             }
         ]
     },
