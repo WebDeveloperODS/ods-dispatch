@@ -35,7 +35,7 @@ const MainServices = () => {
     <div className='container flex lg:grid lg:grid-cols-[50%_50%] divide-x divide-neutral-300 py-24'>
         {
             Services.map((service,index) => <div key={index} className='flex flex-col gap-3'>
-                <img className='h-40 w-50 object-contain mx-auto' src={service.img}/>
+                <img className='h-40 w-45 object-fit mx-auto' src={service.img}/>
                 <H2 extraCss={'tracking-wide mx-auto'}>{service.title}</H2>
                 <ul className='w-[70%] mx-auto flex flex-col gap-3'>
                     {service.points.map((point, index) => (
