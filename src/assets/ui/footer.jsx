@@ -36,7 +36,7 @@ const Footer = () => {
   ]
   return (
     <div className='bg-slate-900'>
-        <div className='container flex lg:grid lg:grid-cols-[30%_20%_20%_30%] gap-8 pt-15 pb-10'>
+        <div className='container flex flex-col lg:grid lg:grid-cols-[30%_20%_20%_30%] gap-8 pt-15 pb-10'>
             <div className="flex flex-col gap-2">
               <H2 extraCss={'text-neutral-100 font-bold uppercase underline underline-offset-3 decoration-3 decoration-red-800 tracking-wider'}>ODS Dispatch</H2>
               <P2 extraClass="text-neutral-100 font-light capitalize tracking-wide">

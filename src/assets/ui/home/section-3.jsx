@@ -22,7 +22,7 @@ export default function ThreeContents(){
         },
     ]
     return(
-        <div className="w-full grid grid-cols-3">
+        <div className="w-full grid grid-cols-1 lg:grid-cols-3">
             {
                 content.map((item,index) =>  <div 
                         key={index}

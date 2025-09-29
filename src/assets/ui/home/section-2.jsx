@@ -3,18 +3,18 @@ import { H2, H3, TagHead } from "../components/heading-1";
 
 export default function WhoWeAre(){
     return(
-        <div className="container mx-auto flex lg:grid lg:grid-cols-2 gap-6 py-24">
+        <div className="container mx-auto flex flex-col lg:grid lg:grid-cols-2 gap-6 py-24">
             <div className="relative">
                 <img className="h-140 w-fit object-bottom" src={`${import.meta.env.VITE_IMAGES_SERVER}/images/home/5.jpg`} alt="Who we are - ODS Dispatch"/>
-                <div className="flex gap-10 absolute bottom-8 left-40 mx-auto">
+                <div className="flex gap-10 absolute bottom-5 left-5 right-5 lg:right-auto lg:bottom-8 lg:left-40 mx-auto">
                     <div className="flex flex-col gap-2 bg-red-700 py-8 px-6 text-neutral-100">
-                        <h2 className="text-5xl font-bold text-shadow-lg">10+ </h2>
+                        <h2 className="text-3xl lg:text-5xl font-bold text-shadow-lg">10+ </h2>
                         <H3 extraCss="font-semibold tracking-wide uppercase text-shadow-lg">
                             Years In Dispatch
                         </H3>
                     </div>
                     <div className="flex flex-col gap-2 bg-blue-950 shadow-lg py-8 px-6 text-neutral-100">
-                        <h2 className="text-5xl font-bold text-shadow-lg">24/7</h2>
+                        <h2 className="text-3xl lg:text-5xl font-bold text-shadow-lg">24/7</h2>
                         <H3 extraCss="font-semibold tracking-wide uppercase text-shadow-lg">
                             Any Day Any Time
                         </H3>
@@ -28,7 +28,7 @@ export default function WhoWeAre(){
                 With <span className="font-extrabold! text-red-800">ODS Dispatch</span>, truck drivers and carriers gain access to reliable freight opportunities that pay well. We handle booking, negotiating, and planning while offering real-time support—helping you reduce downtime, increase revenue, and focus on delivering safely.
                 </P1>
                 <TagHead extraCss={'underline underline-offset-3 decoration-2 decoration-red-800'}>To get benify with business growth</TagHead>
-                <form className="grid grid-cols-2 gap-x-5 gap-y-3">
+                <form className="grid grid-cols-1 lg:grid-cols-2 gap-x-5 gap-y-3">
                     <h4 className="col-span-full capitalize text-md xl:text-lg font-semibold">Share your details and we will reach back tou you.</h4>
                     <div className="flex flex-col gap-1">
                         <label className="font-semibold">Name:</label>

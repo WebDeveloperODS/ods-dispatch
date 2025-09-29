@@ -7,7 +7,7 @@ import { useLocation } from "react-router-dom";
 import { FaPhoneVolume } from "react-icons/fa6";
 import { AiFillMessage } from "react-icons/ai";
 import { HashLink } from "react-router-hash-link";
-// import SideBar from "./sidebar"
+import SideBar from "./sidebar"
 
 export default function Header() {
   const [callSticky, setCallSticky] = useState(false);
@@ -53,7 +53,7 @@ export default function Header() {
   return (
     <>
     <div className="relative flex flex-col">
-      <div className="bg-red-800">
+      <div className="hidden lg:block bg-red-800">
         <div className="container flex place-items-center items-center gap-3 pt-[5px] pb-[2px]">
           <a href="/" className="text-neutral-100 font-[500] text-sm uppercase hover:text-neutral-100 hover:stroke-3 cursor-pointer">MCLEOD TRAINED DISPATCHERS</a>
           <div className="border-r-1 border-neutral-100 h-4 -mt-1"/>
@@ -62,12 +62,12 @@ export default function Header() {
           <a href="/" className="text-neutral-100 font-[500] text-sm uppercase hover:text-neutral-100 hover:stroke-3 cursor-pointer">Night dispatch</a>
         </div>
       </div>
-      <div className={`w-full transition-all ease-in-out duration-300 ${callSticky ? 'fixed top-0 z-50 bg-white py-1 translate-y-0 shadow-sm shadow-neutral-300': 'absolute top-7 z-10'} left-0 right-0 `}>
+      <div className={`w-full transition-all ease-in-out duration-300 ${callSticky ? 'fixed top-0 z-50 bg-white py-1 translate-y-0 shadow-sm shadow-neutral-300': 'absolute top-0 lg:top-7 z-10'} left-0 right-0 `}>
         <div className={`container flex justify-between items-center`}>
           <div className="flex items-center py-1">
-            <img src={logo} alt="logo" className={`${callSticky ? 'h-26':'h-30'} w-auto cursor-pointer`} onClick={() => window.location.href='/'}/>
+            <img src={logo} alt="logo" className={`${callSticky ? 'h-21 lg:h-26':'h-25 lg:h-30'} w-auto cursor-pointer`} onClick={() => window.location.href='/'}/>
           </div>
-          <nav>
+          <nav className="hidden lg:block">
             <ul className="flex items-center justify-center gap-5">
               {HeaderMenu.map((menu, index) => (
                 <li key={index} 
@@ -118,11 +118,11 @@ export default function Header() {
               ))}
             </ul>
           </nav>
-          <div className="flex items-center gap-5">
-            {/* <SideBar removeWhite={callSticky}/> */}
-            <FaPhoneVolume className={`h-[1.1em] w-auto cursor-pointer ${callSticky ? 'text-neutral-800':'text-neutral-200'} hover:text-red-800 hover:stroke-3 transition-colors duration-200`}/>
-            <div className="border-r-1 border-neutral-400 h-4 "/>
-            <AiFillMessage className={`h-[1.1em] w-auto cursor-pointer ${callSticky ? 'text-neutral-800':'text-neutral-200'} hover:text-red-800 hover:stroke-3 transition-colors duration-200`}/>
+          <div className="flex items-center gap-3 lg:gap-5">
+            <SideBar removeWhite={callSticky}/>
+            <FaPhoneVolume className={`hidden lg:block h-3 lg:h-[1.1em] w-auto cursor-pointer ${callSticky ? 'text-neutral-800':'text-neutral-200'} hover:text-red-800 hover:stroke-3 transition-colors duration-200`}/>
+            <div className="hidden lg:block border-r-1 border-neutral-400 h-4 "/>
+            <AiFillMessage className={`hidden lg:block h-3 lg:h-[1.1em] w-auto cursor-pointer ${callSticky ? 'text-neutral-800':'text-neutral-200'} hover:text-red-800 hover:stroke-3 transition-colors duration-200`}/>
           </div>
         </div>
       </div>

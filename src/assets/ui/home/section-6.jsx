@@ -61,16 +61,16 @@ export default function TruckTypes(){
         <div className="container py-24 flex flex-col items-center justify-center">
             <H2 extraCss={'uppercase underline underline-offset-5 decoration-3 decoration-red-800'}>Types Of Trucks ODS Deals With</H2>
             {/* Menu */}
-            <div className="flex gap-3 justify-center items-center my-5 ">
+            <div className="flex flex-wrap gap-3 justify-center items-center my-5 ">
                 {
                     trucks.map((menu, index) => <button onClick={() => setActiveTitle(index)} className={`${activeTitle===index ? 'text-red-800':'text-neutral-600'} border-2 px-2 py-1 rounded-full cursor-pointer hover:bg-red-800 hover:text-white hover:border-transparent`} key={index}>{menu.title}</button>)
                 }
             </div>
             {
                 trucks.map((truck,index) => <div key={index} style={{backgroundImage: `url(${truck.image})`}} 
-                className={`relative bg-cover bg-no-repeat bg-left min-h-140 w-[90%] rounded-xl ${activeTitle===index ? 'opacity-full flex':'opacity-0 hidden'} transition-all ease-in-out duration-400`}>
-                    <div className="absolute top-0 left-0 w-full h-full rounded-xl inset-0 bg-neutral-800/20 pl-10 flex items-center">
-                        <div className="flex flex-col max-w-100 w-100 gap-2 bg-neutral-800/80 p-8 rounded-xl shadow-sm shadow-neutral-800">
+                className={`relative bg-cover bg-no-repeat bg-left h-180 lg:min-h-140 w-full lg:w-[90%] rounded-xl ${activeTitle===index ? 'opacity-full flex':'opacity-0 hidden'} transition-all ease-in-out duration-400`}>
+                    <div className="absolute top-0 left-0 w-full h-full rounded-xl inset-0 bg-neutral-800/20 px-5 pb-8 lg:pl-10 flex items-end lg:items-center">
+                        <div className="flex flex-col lg:max-w-100 lg:w-100 gap-2 bg-neutral-800/80 p-6 lg:p-8 rounded-xl shadow-sm shadow-neutral-800">
                             <H2 extraCss={'text-neutral-100 tracking-wide '}>{truck.title}</H2>
                             <P2 extraClass="text-neutral-100 tracking-wider">{truck.content}</P2>
                             <PageButton addressLink={truck.pageLink} extraClass={'mt-3 bg-red-800 text-white w-fit text-sm! tracking-wide hover:-translate-y-1/12'}>{truck.buttonText}</PageButton>

@@ -17,7 +17,7 @@ export default function SlideShow({children}){
         return () => clearInterval(interval);
     },[])
     return(
-        <div className="relative w-full h-[calc(100vh-1em)] overflow-hidden">
+        <div className="relative w-full h-screen lg:h-[calc(100vh-1em)] overflow-hidden">
             {BgImages.map((image, index) => (
                 <div
                     key={index}

@@ -46,15 +46,15 @@ export default function PointingServices(){
         <div className="bg-gray-100 w-full relative ">
             <div className={`bg-center bg-contain bg-no-repeat bg-fixed w-full h-full`} style={{backgroundImage: `url(${import.meta.env.VITE_IMAGES_SERVER}/images/home/map.png)`}}>
                 <div className="container flex flex-col items-center py-24 gap-3">
-                    <H2 extraCss={'uppercase underline underline-offset-5 decoration-3 decoration-red-800'}>Your Success, Our Dispatch Mission</H2>
-                    <P1 extraClass="capitalize tracking-wider font-[500]">
+                    <H2 extraCss={'uppercase underline underline-offset-5 decoration-3 text-center decoration-red-800'}>Your Success, Our Dispatch Mission</H2>
+                    <P1 extraClass="capitalize tracking-wider font-[500]  text-center">
                         With expert dispatchers and tailored solutions, we help carriers grow sustainably long term.
                     </P1>
                     <div className="flex flex-wrap justify-center mt-5 gap-8">
                         {
                             services.map((service, index)=> <div key={index} 
-                            className="flex flex-col w-[22%] text-center items-center gap-2 px-6 py-8 rounded-lg shadow-md shadow-zinc-400 bg-neutral-200/70">
-                                <img className="w-auto h-30" src={service.icon} alt={`${service.heading}'s icon`}/>
+                            className="flex flex-col w-[85%] lg:w-[22%] text-center items-center gap-2 px-6 py-8 rounded-lg shadow-md shadow-zinc-400 bg-neutral-200/70">
+                                <img className="w-auto h-26 lg:h-30" src={service.icon} alt={`${service.heading}'s icon`}/>
                                 <H3 extraCss={'text-blue-800 font-bold tracking-wide'}>{service.heading}</H3>
                                 <P2 extraClass="capitalize tracking-wide">{service.desc}</P2>
                             </div>)

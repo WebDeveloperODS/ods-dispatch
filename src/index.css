@@ -36,8 +36,16 @@ p{
 }
 @media (min-width: 1300px) and (max-width: 1550px) {
   .container{
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 1000px) {
+  .container{
+    width: 100%;
+    max-width: 92vw;
+    margin: 0 4vw;
   }
 }
