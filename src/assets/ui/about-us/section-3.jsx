@@ -4,8 +4,12 @@ import { P1, P2 } from '../components/descriptions'
 import { PageButton } from '../components/buttons'
 import { ArrowUpRightFromCircle } from 'lucide-react'
 import { ArrowRight } from 'lucide-react'
+import { useRef } from 'react'
+import { ChevronLeftCircle } from 'lucide-react'
+import { ChevronRightCircle } from 'lucide-react'
 
 const FourPoints = () => {
+    const scrollContainerRef = useRef()
     const points = [
         {
             heading: 'Proven Expertise',
@@ -47,7 +51,16 @@ const FourPoints = () => {
             description: "Paid ads and targeted posts bring new clients directly to you."
         }
         ];
-
+    const scroll = (direction) => {
+        if (scrollContainerRef.current) {
+            const scrollAmount = 300
+            const newScrollPosition = scrollContainerRef.current.scrollLeft + (direction === 'left' ? -scrollAmount : scrollAmount)
+            scrollContainerRef.current.scrollTo({
+                left: newScrollPosition,
+                behavior: 'smooth'
+            })
+        }
+    }
     return (
     <div className="bg-gray-100 w-full relative ">
         <div className={`bg-center bg-contain bg-no-repeat bg-fixed w-full h-full`} style={{backgroundImage: `url(${import.meta.env.VITE_IMAGES_SERVER}/images/home/map.png)`}}>
@@ -66,21 +79,28 @@ const FourPoints = () => {
                         </div>)
                     }
                 </div>
-                <div className='grid grid-cols-[22%_77%] gap-0 w-full px-6 mt-6 '>
+                <div className='grid grid-cols-[22%_77%] gap-0 w-full px-6 mt-6 relative'>
                     <div className='relative bg-cover bg-center bg-no-repeat min-h-100 h-full w-[25] rounded-xl shadow-xl shadow-neutral-600' style={{backgroundImage: 'url(/images/about-us/5.jpg'}}>
-                        <div className='absolute top-0 left-0 w-full h-full rounded-xl px-4 pt-6 pb-3 text-center bg-radial-[at_50%_80%] from-transparent from-40% to-neutral-600/30 to-70% flex flex-col justify-between'>
-                            <H3 extraCss={'text-red-600 uppercase font-bold italic underline decoration-neutral-800/80 underline-offset-3'}>100% managed social media presence</H3>
+                        <div className='absolute top-0 left-0 w-full h-full rounded-xl px-4 pt-6 pb-3 text-center bg-radial-[at_50%_80%] from-transparent from-40% to-red-200/40 to-70% flex flex-col justify-between'>
+                            <H3 extraCss={'text-red-600 uppercase font-bold italic underline decoration-neutral-100 underline-offset-4'}>100% managed social media presence</H3>
                             <PageButton addressLink={'/contact-us'} extraClass={'text-neutral-100 bg-red-700 rounded-full! text-sm! w-fit mx-auto hover:-translate-y-1'}>Discuss with us</PageButton>
                         </div>
                     </div>
-                    <div className='flex flex-no-wrap gap-10 overflow-auto pl-8 pt-2 pb-6'>
+                    <div 
+                    ref={scrollContainerRef}
+                    style={{ scrollbarWidth: 'thin' }} className='flex flex-no-wrap gap-10 overflow-auto pl-8 pt-2 pb-6 pr-2'>
                         {
-                            benefits.map((bene, index) => <div className='relative min-w-[250px] rounded-lg shadow-md shadow-zinc-400 bg-neutral-200/80 flex flex-col gap-2 text-center pt-16 px-5' key={index}>
+                            benefits.map((bene, index) => <div 
+                            className='min-w-[250px] rounded-lg shadow-md shadow-zinc-400 bg-neutral-200/80 flex flex-col gap-2 text-center pt-16 px-5' key={index}>
                                 <H2 extraCss={'tracking-normal'}>{bene.title}</H2 >
                                 <P1 extraClass='capitalize! tracking-wide'>{bene.description}</P1>
                                 <PageButton extraClass={'text-red-700 text-sm! w-fit flex items-center gap-3 mx-auto px-1! pb-[2px]! rounded-none! mt-3 border-b-2 border-black'} >Apply Now <ArrowRight className='-mt-1 h-4 w-auto stroke-3' /></PageButton>
                             </div>)
-                        }
+                        }    
+                        <div className='absolute -bottom-8 right-10 flex items-center gap-10'>
+                            <button className='flex items-center gap-2 text-sm font-semibold border-b hover:text-red-700 cursor-pointer transition-transform ease-in-out duration-300 hover:scale-[1.05]' onClick={() => scroll('left')}><ChevronLeftCircle className='h-[15px] stroke-3 mb-1'/>Left</button>
+                            <button className='flex items-center gap-2 text-sm font-semibold border-b hover:text-red-700 cursor-pointer transition-transform ease-in-out duration-300 hover:scale-[1.05]' onClick={() => scroll('right')}>Right <ChevronRightCircle className='h-[15px] stroke-3 mb-1'/></button>
+                        </div>
                     </div>
                 </div>
                 <PageButton addressLink={'/truck-types'} extraClass={'flex gap-2 justify-center items-center text-red-800 border-2 hover:border-transparent hover:bg-red-800 hover:text-neutral-100 mt-10 leading-tight hover:scale-[1.05]' }> Explore Trucks We Deal <ArrowUpRightFromCircle className="w-4 stroke-3 h-auto -mt-1"/></PageButton>
