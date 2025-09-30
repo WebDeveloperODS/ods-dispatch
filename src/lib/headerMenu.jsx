@@ -56,10 +56,32 @@ export const HeaderMenu=[
         ]
     },
     {
-        title: 'Carriers Setup',
-        link: '/carriers-setup',
+        title: 'Services We Provides',
+        link: null,
         active: false,
+        childPages: [
+            {
+                title: 'Dispatch & Brokerage',
+                link: '/services-by-ods/dispatch-and-brokerage',
+                active: false,
+            },        
+            {
+                title: 'Social Media Management',
+                link: '/services-by-ods/social-media-management',
+                active: false,
+            },        
+            {
+                title: 'Business Web Developments',
+                link: '/services-by-ods/business-web-development',
+                active: false,
+            }
+        ]
     },
+    // {
+    //     title: 'Carriers Setup',
+    //     link: '/carriers-setup',
+    //     active: false,
+    // },
     // {
     //     title: 'Blog',
     //     link: '/',

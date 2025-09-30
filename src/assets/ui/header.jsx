@@ -4,10 +4,11 @@ import { useEffect } from "react"
 import { HeaderMenu } from "../../lib/headerMenu";
 import { ChevronDown } from "lucide-react";
 import { useLocation } from "react-router-dom";
-import { FaPhoneVolume } from "react-icons/fa6";
-import { AiFillMessage } from "react-icons/ai";
+// import { FaPhoneVolume } from "react-icons/fa6";
+// import { AiFillMessage } from "react-icons/ai";
 import { HashLink } from "react-router-hash-link";
 import SideBar from "./sidebar"
+import { PageButton } from "./components/buttons";
 
 export default function Header() {
   const [callSticky, setCallSticky] = useState(false);
@@ -120,9 +121,12 @@ export default function Header() {
           </nav>
           <div className="flex items-center gap-3 lg:gap-5">
             <SideBar removeWhite={callSticky}/>
-            <FaPhoneVolume className={`hidden lg:block h-3 lg:h-[1.1em] w-auto cursor-pointer ${callSticky ? 'text-neutral-800':'text-neutral-200'} hover:text-red-800 hover:stroke-3 transition-colors duration-200`}/>
+            <PageButton addressLink={''} extraClass={`hidden lg:block ${callSticky ? 'border-red-700 border-2 text-red-700 hover:bg-red-700 hover:text-neutral-100 hover:border-transparent shadow-md shadow-neutral-200':'bg-linear-to-bl from-blue-700 from-30% to-red-700 to-80% text-neutral-100  shadow-md shadow-neutral-700'} transition-all ease-in-out duration-300 hover:scale-[1.075]`}>
+              Carriers Setup
+            </PageButton>
+            {/* <FaPhoneVolume className={`hidden lg:block h-3 lg:h-[1.1em] w-auto cursor-pointer ${callSticky ? 'text-neutral-800':'text-neutral-200'} hover:text-red-800 hover:stroke-3 transition-colors duration-200`}/>
             <div className="hidden lg:block border-r-1 border-neutral-400 h-4 "/>
-            <AiFillMessage className={`hidden lg:block h-3 lg:h-[1.1em] w-auto cursor-pointer ${callSticky ? 'text-neutral-800':'text-neutral-200'} hover:text-red-800 hover:stroke-3 transition-colors duration-200`}/>
+            <AiFillMessage className={`hidden lg:block h-3 lg:h-[1.1em] w-auto cursor-pointer ${callSticky ? 'text-neutral-800':'text-neutral-200'} hover:text-red-800 hover:stroke-3 transition-colors duration-200`}/> */}
           </div>
         </div>
       </div>

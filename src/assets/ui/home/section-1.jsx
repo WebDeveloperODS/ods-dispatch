@@ -10,7 +10,7 @@ const IntroWithSlider = () => {
   return (
     <div>
       <SlideShow>
-        <div className='container bg-transparent-1 p-6 lg:p-15 rounded-xl flex flex-col'>
+        <div className='container bg-neutral-950/50 p-6 lg:p-15 rounded-xl flex flex-col'>
             <div className='flex flex-col gap-3'>
                 <H1 extraCss={'text-neutral-100 underline underline-offset-3 lg:underline-offset-8 decoration-3 decoration-red-800 text-shadow-lg/10'}>Smart Dispatching & Powerful Marketing</H1>
                 <H2 extraCss={'capitalize text-neutral-100 text-shadow-lg/30'}>

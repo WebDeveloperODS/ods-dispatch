@@ -21,7 +21,7 @@ export default function SlideShow({children}){
             {BgImages.map((image, index) => (
                 <div
                     key={index}
-                    className={`absolute inset-0 z-0 transition-all duration-3000 ease-in-out ${
+                    className={`absolute inset-0 z-0 transition-all duration-3000 ease-in-out bg-fixed ${
                         index === currentSlide ? 'opacity-100' : 'opacity-0'
                     }`}
                     style={{
@@ -32,7 +32,7 @@ export default function SlideShow({children}){
                     }}
                 />
             ))}
-            <div className="relative z-2 h-full flex items-end justify-end pb-20 bg-popup-bg">
+            <div className="relative z-2 h-full flex items-end justify-end pb-20 bg-neutral-700/20">
                 {children}
             </div>
         </div>
