@@ -10,7 +10,7 @@ export const HeaderMenu=[
         active: false,
     },
     {
-        title: 'Truck types',
+        title: 'Truck',
         link: '/truck-types',
         active: false,
         childPages: [
@@ -56,15 +56,10 @@ export const HeaderMenu=[
         ]
     },
     {
-        title: 'Services We Provides',
+        title: 'Services',
         link: null,
         active: false,
         childPages: [
-            {
-                title: 'Dispatch & Brokerage',
-                link: '/services-by-ods/dispatch-and-brokerage',
-                active: false,
-            },        
             {
                 title: 'Social Media Management',
                 link: '/services-by-ods/social-media-management',
@@ -74,7 +69,12 @@ export const HeaderMenu=[
                 title: 'Business Web Developments',
                 link: '/services-by-ods/business-web-development',
                 active: false,
-            }
+            },
+            {
+                title: 'Dispatch',
+                link: '/services-by-ods/dispatch-and-brokerage',
+                active: false,
+            }        
         ]
     },
     // {
