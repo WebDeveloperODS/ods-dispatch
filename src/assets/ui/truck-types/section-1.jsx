@@ -4,7 +4,7 @@ import { H1 } from "../components/heading-1"
 
 const TruckTypesIntro = () => {
   return (
-    <div className='relative h-[calc(100vh-8em)] bg-cover bg-fixed bg-center' style={{backgroundImage:'url(/images/truck-types/1.png)'}}>
+    <div className='relative h-screen lg:h-[calc(100vh-1em)] bg-cover bg-fixed bg-center' style={{backgroundImage:'url(/images/truck-types/1.png)'}}>
         <div className="absolute top-0 left-0 w-full h-full bg-neutral-700/20 flex items-end justify-end pb-20">
             <div className="container bg-neutral-950/80 min-h-30 p-15 rounded-xl flex flex-col gap-3">
                 <H1 extraCss={'text-neutral-100 underline underline-offset-8 decoration-3 decoration-red-800 text-shadow-lg/10'}>Truck Types We Dispatch at ODS Dispatch</H1>

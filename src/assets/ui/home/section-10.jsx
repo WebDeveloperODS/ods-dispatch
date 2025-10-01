@@ -18,15 +18,17 @@ export default function ContactForm(){
     const [submitStatus, setSubmitStatus] = useState('');
 
     const truckTypes = [
-        'Reefer',
-        'Dry Van',
-        'Flatbed',
-        'Step Deck',
-        'Low Boy',
-        'Hotshot',
-        'Box Truck',
-        'Tanker'
-    ];
+    'Reefer',
+    'Dry Van',
+    'Flatbed',
+    'Straight Box',
+    'Power Only',
+    'Step Deck',
+    'Low Boy',
+    'Hotshot',
+    'Box Truck',
+    'Tanker', 'RGN & Heavy Haul'
+  ];
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -199,7 +201,7 @@ export default function ContactForm(){
                                     <span className="text-xs text-red-500">Please select at least one truck type</span>
                                 )}
                             </label>
-                            <div className="grid grid-cols-2 md:grid-cols-8 gap-3">
+                            <div className="grid grid-cols-2 md:grid-cols-6 gap-3">
                                 {truckTypes.map((truckType) => (
                                     <div key={truckType} className="flex items-center gap-2">
                                         <input 

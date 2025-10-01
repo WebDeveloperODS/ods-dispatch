@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Send, Truck, MapPin, Phone, Mail, User, Building } from "lucide-react";
 import { H2 } from "../components/heading-1";
 import { P1 } from "../components/descriptions";
+import { sendFormData } from "../../api/backend-api";
 
 export default function ContactForm(){
     const [formData, setFormData] = useState({
@@ -21,11 +22,13 @@ export default function ContactForm(){
         'Reefer',
         'Dry Van',
         'Flatbed',
+        'Straight Box',
+        'Power Only',
         'Step Deck',
         'Low Boy',
         'Hotshot',
         'Box Truck',
-        'Tanker'
+        'Tanker', 'RGN & Heavy Haul'
     ];
 
     const handleInputChange = (e) => {
@@ -47,20 +50,25 @@ export default function ContactForm(){
 
     const handleSubmit = async () => {
         setIsSubmitting(true);
-        
+
         try {
             // Simulate API call
-            await new Promise(resolve => setTimeout(resolve, 2000));
-            setSubmitStatus('success');
-            setFormData({
-                fullName: '',
-                companyName: '',
-                companyEmail: '',
-                contactNumber: '',
-                companyAddress: '',
-                truckTypes: [],
-                additionalInfo: ''
-            });
+            // await new Promise(resolve => setTimeout(resolve, 2000));
+        
+            const res = await sendFormData(formData.fullName, formData.companyName, formData.companyEmail, formData.contactNumber, formData.companyAddress, formData.truckTypes, formData.additionalInfo)
+            if(res){
+                // alert(`Response = > ${ res }`) 
+                setSubmitStatus('success');
+                setFormData({
+                    fullName: '',
+                    companyName: '',
+                    companyEmail: '',
+                    contactNumber: '',
+                    companyAddress: '',
+                    truckTypes: [],
+                    additionalInfo: ''
+                })
+            }
         } catch (error) {
             setSubmitStatus('error');
         } finally {
@@ -196,7 +204,7 @@ export default function ContactForm(){
                                     <span className="text-xs text-red-500">Please select at least one truck type</span>
                                 )}
                             </label>
-                            <div className="grid grid-cols-2 md:grid-cols-8 gap-3">
+                            <div className="grid grid-cols-2 md:grid-cols-6 gap-3">
                                 {truckTypes.map((truckType) => (
                                     <div key={truckType} className="flex items-center gap-2">
                                         <input 

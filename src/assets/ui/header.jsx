@@ -14,7 +14,7 @@ export default function Header() {
   const [callSticky, setCallSticky] = useState(false);
   const [openDropIndex, setOpenDropIndex] = useState(null); // Track which dropdown is open by index
   const location = useLocation()
-  // const [homeCheck , setHomeCheck] = useState(true)
+  const [carriersCheck , setCarriersCheck] = useState(false)
   
   
   useEffect(() => {
@@ -45,11 +45,11 @@ export default function Header() {
     setOpenDropIndex(null);
   }
 
-  // useEffect(() => {
-  //   if(location.pathname !== '/'){
-  //     setHomeCheck(false)
-  //   }
-  // },[location])
+  useEffect(() => {
+    if(location.pathname === '/carriers-setup'){
+      setCarriersCheck(true)
+    }
+  },[location])
 
   return (
     <>
@@ -63,7 +63,7 @@ export default function Header() {
           <a href="/" className="text-neutral-100 font-[500] text-sm uppercase hover:text-neutral-100 hover:stroke-3 cursor-pointer">Night dispatch</a>
         </div>
       </div>
-      <div className={`w-full transition-all ease-in-out duration-300 ${callSticky ? 'fixed top-0 z-50 bg-white py-1 translate-y-0 shadow-sm shadow-neutral-300': 'absolute top-0 lg:top-7 z-10'} left-0 right-0 `}>
+      <div className={`w-full transition-all ease-in-out duration-300 ${callSticky ? 'fixed top-0 z-50 bg-white py-1 translate-y-0 shadow-sm shadow-neutral-300': carriersCheck ? 'top-0 relative shadow-xs shadow-neutral-400':'absolute top-0 lg:top-7 z-10'} left-0 right-0 `}>
         <div className={`container flex justify-between items-center`}>
           <div className="flex items-center py-1">
             <img src={logo} alt="logo" className={`${callSticky ? 'h-21 lg:h-26':'h-25 lg:h-30'} w-auto cursor-pointer`} onClick={() => window.location.href='/'}/>
@@ -76,7 +76,7 @@ export default function Header() {
                     onMouseEnter={() => handleMouseEnter(index, menu.childPages)}
                     onMouseLeave={handleMouseLeave}>
                   <a
-                    className={`${callSticky ? 'text-neutral-800' :'text-neutral-100'} flex items-center justify-center gap-2 font-semibold text-sm uppercase ${ location.pathname === menu.link ? 'border-b-2 border-red-700 font-bold! text-shadow-xs':''} hover:border-b-2 hover:border-red-800 transition-all duration-200`}
+                    className={`${callSticky || carriersCheck ? 'text-neutral-800' :'text-neutral-100 text-shadow-lg text-shadow-neutral-700'} flex items-center justify-center gap-2 font-semibold text-sm uppercase ${ location.pathname === menu.link ? 'border-b-2 border-red-700 font-bold! text-shadow-md':' '} hover:border-b-2 hover:border-red-800 transition-all duration-200`}
                     href={menu.link}
                   >
                     {menu.title} 
@@ -121,7 +121,7 @@ export default function Header() {
           </nav>
           <div className="flex items-center gap-3 lg:gap-5">
             <SideBar removeWhite={callSticky}/>
-            <PageButton addressLink={''} extraClass={`hidden lg:block ${callSticky ? 'border-red-700 border-2 text-red-700 hover:bg-red-700 hover:text-neutral-100 hover:border-transparent shadow-md shadow-neutral-200':'bg-linear-to-bl from-blue-700 from-30% to-red-700 to-80% text-neutral-100  shadow-md shadow-neutral-700'} transition-all ease-in-out duration-300 hover:scale-[1.075]`}>
+            <PageButton addressLink={'/carriers-setup'} extraClass={`hidden lg:block ${callSticky ? 'border-red-700 border-2 text-red-700 hover:bg-red-700 hover:text-neutral-100 hover:border-transparent shadow-md shadow-neutral-200':'bg-linear-to-bl from-blue-700 from-30% to-red-700 to-80% text-neutral-100  shadow-md shadow-neutral-700'} transition-all ease-in-out duration-300 hover:scale-[1.075]`}>
               Carriers Setup
             </PageButton>
             {/* <FaPhoneVolume className={`hidden lg:block h-3 lg:h-[1.1em] w-auto cursor-pointer ${callSticky ? 'text-neutral-800':'text-neutral-200'} hover:text-red-800 hover:stroke-3 transition-colors duration-200`}/>
