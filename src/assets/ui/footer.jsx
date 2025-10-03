@@ -13,25 +13,25 @@ import { LinkedinIcon } from "lucide-react"
 const Footer = () => {
   const trucks = [
     {
-      title: 'Dry vans', link: '/'
+      title: 'Dry vans', link: '/truck-types#dry-vans'
     },
     {
-      title: 'Straight box', link: '/'
+      title: 'Straight box', link: '/truck-types#straight-box'
     },
     {
-      title: 'Flatbed', link: '/'
+      title: 'Flatbed', link: '/truck-types#flatbed'
     },
     {
-      title: 'Hotshot', link: '/'
+      title: 'Hotshot', link: '/truck-types#hotshot'
     },
     {
-      title: 'Reefer', link: '/'
+      title: 'Reefer', link: '/truck-types#reefer'
     },
     {
-      title: 'Step Deck', link: '/'
+      title: 'Step Deck', link: '/truck-types#step-deck'
     },
     {
-      title: 'RGN & Heavy haul', link: '/'
+      title: 'RGN & Heavy haul', link: '/truck-types#rgn-heavy-haul'
     },
   ]
   return (
@@ -58,11 +58,11 @@ const Footer = () => {
             <div className="flex flex-col gap-3">
               <H3 extraCss={'text-neutral-100 font-bold capitalize tracking-wider'}>Others</H3>
               <a className="text-neutral-100 flex items-start gap-2 w-fit underline decoration-1 decoration-transparent underline-offset-6 transition-all ease-in-out duration-300 hover:scale-[1.05] hover:decoration-red-800"
-                href={''}>
+                href={'tel:+19714727066'}>
                 <PhoneCall className="h-4 w-auto mt-[0.175em]" /> (971) 472 7066
               </a>
               <a className="text-neutral-100 flex items-start gap-2 w-fit underline decoration-1 decoration-transparent underline-offset-6 transition-all ease-in-out duration-300 hover:scale-[1.05] hover:decoration-red-800"
-                href={''}>
+                href={'mailto:info@odsdispatch.com'}>
                 <MailIcon className="h-4 w-auto mt-[0.175em]" /> info@odsdispatch.com
               </a>
               <a className="text-neutral-100 flex items-start gap-2 w-fit underline decoration-1 decoration-transparent underline-offset-6 transition-all ease-in-out duration-300 hover:scale-[1.05] hover:decoration-red-800"

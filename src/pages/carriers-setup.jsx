@@ -3,6 +3,7 @@ import { H1, H3 } from '../assets/ui/components/heading-1';
 import { Trash2, Asterisk, X } from 'lucide-react';
 import { submitCarrierData } from '../assets/api/backend-api';
 import { FaTruckLoading } from 'react-icons/fa';
+import { ClipLoader } from 'react-spinners';
 
 // Truck Details Component
 const TruckDetails = ({ index, truck, updateTruck, removeTruck, count }) => {
@@ -839,9 +840,9 @@ const CarriersSetup = () => {
           </button>
         </div>
         {
-          submission ? <div className='absolute top-0 left-0 w-full h-full bg-neutral-500/50 flex flex-col items-center justify-center'>
-            <FaTruckLoading />
-            <h3>Submitting</h3>
+          submission ? <div className='fixed top-0 left-0 w-full h-full bg-neutral-800/60 flex flex-col items-center justify-center'>
+            <ClipLoader size={60} color='white' speedMultiplier={0.75}  cssOverride={{borderWidth: '5px',}}/>
+            <h3 className='text-white tracking-wider text-lg font-bold mt-3'>Submitting...</h3>
           </div> : null
         }
       </form>

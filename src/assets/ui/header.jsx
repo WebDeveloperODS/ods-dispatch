@@ -9,6 +9,8 @@ import { useLocation } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import SideBar from "./sidebar"
 import { PageButton } from "./components/buttons";
+import { PhoneCallIcon } from "lucide-react";
+import { BiEnvelope } from "react-icons/bi";
 
 export default function Header() {
   const [callSticky, setCallSticky] = useState(false);
@@ -55,12 +57,10 @@ export default function Header() {
     <>
     <div className="relative flex flex-col">
       <div className="hidden lg:block bg-red-800">
-        <div className="container flex place-items-center items-center gap-3 pt-[5px] pb-[2px]">
-          <a href="/" className="text-neutral-100 font-[500] text-sm uppercase hover:text-neutral-100 hover:stroke-3 cursor-pointer">MCLEOD TRAINED DISPATCHERS</a>
-          <div className="border-r-1 border-neutral-100 h-4 -mt-1"/>
-          <a href="/" className="text-neutral-100 font-[500] text-sm uppercase hover:text-neutral-100 hover:stroke-3 cursor-pointer">After hours dispatch</a>
-          <div className="border-r-1 border-neutral-100 h-4 -mt-1"/>
-          <a href="/" className="text-neutral-100 font-[500] text-sm uppercase hover:text-neutral-100 hover:stroke-3 cursor-pointer">Night dispatch</a>
+        <div className="container flex justify-end items-center gap-5 pt-[5px] pb-[2px]">
+          <a href="mailto:info@odsdispatch.com" className="flex items-center gap-2 text-neutral-100 font-[500] text-sm hover:text-neutral-100 hover:stroke-3 cursor-pointer"><BiEnvelope className="w-[18px] h-auto stroke-1" />info@odsdispatch.com</a>
+
+          <a href="tel:+19714727066" className="flex items-center gap-2 text-neutral-100 font-[500] text-sm uppercase hover:text-neutral-100 hover:stroke-3 cursor-pointer"><PhoneCallIcon className="w-[16px] h-auto stroke-3"/> (971) 472 7066 </a>
         </div>
       </div>
       <div className={`w-full transition-all ease-in-out duration-300 ${callSticky ? 'fixed top-0 z-50 bg-white py-1 translate-y-0 shadow-sm shadow-neutral-300': carriersCheck ? 'top-0 relative shadow-xs shadow-neutral-400':'absolute top-0 lg:top-7 z-10'} left-0 right-0 `}>
