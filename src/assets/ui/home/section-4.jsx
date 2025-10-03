@@ -4,27 +4,27 @@ import { P1, P2 } from "../components/descriptions"
 import { H2, H3 } from "../components/heading-1"
 
 export default function PointingServices(){
-    // const SERVER = 'http://locathost:5173'
+    const SERVER = import.meta.env.VITE_IMAGES_SERVER
     const services=[
         {
             heading: 'Expert Freight Booking',
             desc: 'We secure the best available freight to keep your trucks loaded and moving profitably.',
-            icon: `/images/home/icons/expert-freight-booking.png`,
+            icon: `${SERVER}/images/home/icons/expert-freight-booking.png`,
         },
         {
             heading: 'Rate Negotiation',
             desc: 'Our dispatchers negotiate hard with brokers to get you the highest-paying loads.',
-            icon: `/images/home/icons/expert-freight-booking.png`,
+            icon: `${SERVER}/images/home/icons/rate-negotiation.png`,
         },
         {
             heading: 'Broker Communication',
             desc: 'We handle all broker calls, updates, and follow-ups so you can focus on driving.',
-            icon: `/images/home/icons/expert-freight-booking.png`,
+            icon: `${SERVER}/images/home/icons/broker-communication.png`,
         },
         {
             heading: 'Paperwork Management',
             desc: 'From filling out carrier packets to ensuring compliance, we take care of the paperwork.',
-            icon: `/images/home/icons/expert-freight-booking.png`,
+            icon: `${SERVER}/images/home/icons/paperwork-management.png`,
         },
         // {
         //     heading: 'Support with Lumper & Detention',
@@ -60,7 +60,7 @@ export default function PointingServices(){
                             </div>)
                         }
                     </div>
-                    <PageButton extraClass={'flex gap-2 justify-center items-center text-red-800 border-2 hover:border-transparent hover:bg-red-800 hover:text-neutral-100 mt-10 leading-tight hover:scale-[1.05]' }> Explore More <ArrowUpRightFromCircle className="w-4 stroke-3 h-auto -mt-1"/></PageButton>
+                    <PageButton addressLink={'/truck-types'} extraClass={'flex gap-2 justify-center items-center text-red-800 border-2 hover:border-transparent hover:bg-red-800 hover:text-neutral-100 mt-10 leading-tight hover:scale-[1.05]' }> Explore More <ArrowUpRightFromCircle className="w-4 stroke-3 h-auto -mt-1"/></PageButton>
                 </div>
             </div>
         </div>

@@ -7,7 +7,7 @@ const MainServices = () => {
     const Services = [
         {
             title: 'Truck Dispatch Solutions',
-            img: '/images/about-us/icon-1.png',
+            img: `${import.meta.env.VITE_IMAGES_SERVER}/images/about-us/icon-1.png`,
             points: [
             'Secure high-paying loads nationwide with trusted brokers',
             'Complete handling of paperwork, rate confirmations, and negotiations',
@@ -19,7 +19,7 @@ const MainServices = () => {
         },
         {
             title: 'Digital Presence Utilization',
-            img: '/images/about-us/icon-2.png',
+            img: `${import.meta.env.VITE_IMAGES_SERVER}/images/about-us/icon-2.png`,
             points: [
             'Professional branding to strengthen your trucking company’s online presence',
             'Custom content creation: engaging posts, videos, and graphics',
@@ -32,12 +32,12 @@ const MainServices = () => {
     ]
 
     return (
-    <div className='container flex lg:grid lg:grid-cols-[50%_50%] divide-x divide-neutral-300 py-24'>
+    <div className='container flex flex-col lg:grid lg:grid-cols-[50%_50%] gap-10 lg:gap-0 lg:divide-x lg:divide-neutral-300 py-24'>
         {
             Services.map((service,index) => <div key={index} className='flex flex-col gap-3'>
-                <img className='h-40 w-45 object-fit mx-auto' src={service.img}/>
+                <img className='h-60 w-auto lg:h-40 lg:w-45 object-fit mx-auto' src={service.img}/>
                 <H2 extraCss={'tracking-wide mx-auto'}>{service.title}</H2>
-                <ul className='w-[70%] mx-auto flex flex-col gap-3'>
+                <ul className='w-[80%] lg:w-[70%] mx-auto flex flex-col gap-3'>
                     {service.points.map((point, index) => (
                         <li className='flex gap-3' key={index}>
                         <div className="flex-shrink-0 w-6 h-7 flex items-center justify-center">

@@ -68,14 +68,14 @@ export default function TestimonialsDisplay(){
     // };
 
     return(
-        <div className="container mx-auto py-24 px-4">
-            <div className="flex flex-col items-center justify-center gap-8 max-w-7xl mx-auto">
-                <H2 extraCss={'uppercase text-center underline underline-offset-8 decoration-4 decoration-red-800 text-gray-800 mb-8'}>
+        <div className="container mx-auto py-12 lg:py-24 px-4">
+            <div className="flex flex-col items-center justify-center gap-2 lg:gap-8 max-w-7xl mx-auto">
+                <H2 extraCss={'uppercase text-center underline lg:underline-offset-8 decoration-4 decoration-red-800 text-gray-800 mb-4 lg:mb-8'}>
                     Testimonials From Our Carriers
                 </H2>
                 
                 <div 
-                    className="relative w-full"
+                    className="hidden lg:block relative w-full"
                     onMouseEnter={() => setIsAutoPlaying(false)}
                     onMouseLeave={() => setIsAutoPlaying(true)}
                 >
@@ -97,7 +97,7 @@ export default function TestimonialsDisplay(){
                     </button>
 
                     {/* Testimonials Container */}
-                    <div className="relative bg-gradient-to-br from-neutral-100 to-gray-100 rounded-2xl shadow-xl px-10 py-7">
+                    <div className=" relative bg-gradient-to-br from-neutral-100 to-gray-100 rounded-2xl shadow-xl px-10 py-7">
                         <div className="overflow-x-hidden">
                             <div 
                                 className="flex transition-transform duration-700 ease-in-out"
@@ -145,7 +145,7 @@ export default function TestimonialsDisplay(){
                 </div>
 
                 {/* Mobile View - Stack testimonials */}
-                <div className="md:hidden w-full space-y-6">
+                <div className="relative lg:hidden w-full space-y-6">
                     {testimonials.slice(currentIndex, currentIndex + 1).map((testimonial, index) => (
                         <div key={currentIndex + index} className="bg-white rounded-xl shadow-md p-6 border border-gray-100">
                             <Quote className="h-6 w-6 text-red-500 mb-3 opacity-60" />
@@ -162,6 +162,21 @@ export default function TestimonialsDisplay(){
                             </div>
                         </div>
                     ))}
+                    <button
+                        onClick={prevSlide}
+                        className="absolute -left-6 top-1/2 cursor-pointer -translate-y-1/2 z-10 bg-neutral-50 hover:bg-white shadow-sm shadow-neutral-600 rounded-full p-3 transition-all duration-300 hover:scale-110"
+                        aria-label="Previous testimonial"
+                    >
+                        <ChevronLeft className="h-4 w-4 text-gray-800" />
+                    </button>
+                    
+                    <button
+                        onClick={nextSlide}
+                        className="absolute -right-6 top-1/2 cursor-pointer -translate-y-1/2 z-10 bg-neutral-50 hover:bg-white shadow-sm shadow-neutral-600 rounded-full p-3 transition-all duration-300 hover:scale-110"
+                        aria-label="Next testimonial"
+                    >
+                        <ChevronRight className="h-4 w-4 text-gray-700" />
+                    </button>
                 </div>
             </div>
         </div>

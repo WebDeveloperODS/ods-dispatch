@@ -1,18 +1,28 @@
 import { useState } from 'react'
 import { Menu, ChevronRight, ChevronRightCircle, Mail, X, Smartphone } from 'lucide-react'
 import { HeaderMenu } from '../../lib/headerMenu'
+import { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 const SideBar = ({removeWhite}) => {
     const [open, setOpen] = useState(false)
     const [hover, setHover]= useState(-1)
     const [childsCalled, setChildCalled]= useState(-1)
     const [childHover, setChildHover]= useState(-1)
+    const [showRed, setShowRed]= useState(false)
     // Mock router - replace with actual useLocation() hook
-    const router = { pathname: '/', hash: '' }
+     
+    const router = useLocation()
+
+    useEffect(() => {
+        if(location.pathname === '/carriers-setup'){
+            setShowRed(true)
+        }
+    },[location])
     
     return (
     <>
-        <div onClick={() => setOpen(true)} className={`block lg:hidden border-2 p-1 ${removeWhite ? 'border-red-700 hover:border-transparent': 'border-neutral-100'} rounded-xl cursor-pointer hover:bg-red-700 transition-all ease-in-out duration-300 hover:scale-[1.05] hover:border-transparent`}>
-            <Menu className={`h-5 w-auto ${removeWhite ? 'text-red-900! hover:text-neutral-100' : 'text-neutral-100'} stroke-2`}/>
+        <div onClick={() => setOpen(true)} className={`block lg:hidden border-2 p-1 ${removeWhite || showRed ? 'border-red-700 hover:border-transparent': 'border-neutral-100'} rounded-xl cursor-pointer hover:bg-red-700 transition-all ease-in-out duration-300 hover:scale-[1.05] hover:border-transparent`}>
+            <Menu className={`h-5 w-auto ${removeWhite || showRed ? 'text-red-900! hover:text-neutral-100' : 'text-neutral-100'} stroke-2`}/>
         </div>
         <div className={`fixed top-0 left-0 bg-neutral-800/60 w-screen h-screen z-50 transition-all ease-in-out duration-500 ${open ? 'translate-x-0':'-translate-x-full'}`}>
             <div className={`fixed w-80 h-screen bg-neutral-100 flex flex-col transition-all ease-in-out duration-700 ${open ? 'translate-x-0':'-translate-x-full'}`}>
@@ -24,7 +34,7 @@ const SideBar = ({removeWhite}) => {
                     {
                         HeaderMenu.map((item,index) => 
                             <li key={index}>
-                                <a href={item.childPages ? null : item.link} 
+                                <a href={item.link} 
                                 onClick={() => (childsCalled === -1 && item.childPages && setChildCalled(index)) || (childsCalled === index && item.childPages && setChildCalled(-1))} 
                                 onMouseEnter={() => setHover(index)} onMouseLeave={() => setHover(-1)} 
                                 className={`flex items-center capitalize tracking-wide font-semibold justify-between border-b pb-2 px-2 cursor-pointer ${hover === index ||childsCalled===index ? 'border-red-700':'border-neutral-300'} 
@@ -38,7 +48,8 @@ const SideBar = ({removeWhite}) => {
                                             onMouseEnter={() => setChildHover(index)} onMouseLeave={() => setChildHover(-1)} 
                                             className={`flex items-center capitalize tracking-wide text-sm font-semibold justify-between border-b pb-2 px-2 
                                             ${childHover === index ? 'border-red-700':'border-neutral-300'} 
-                                            ${router.hash.split('#')[1]?.toLowerCase() === child.link.split('#')[1]?.toLowerCase() ? 'border-red-700 text-red-700':''}`}>
+                                            ${router.pathname === child.link
+                                            ? 'border-red-700 text-red-700':''}`}>
                                                 {child.title} <ChevronRight className={`h-5 w-auto ${childHover === index ? 'text-red-700':''}`}/>
                                             </a>)
                                         }

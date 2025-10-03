@@ -12,7 +12,7 @@ const TruckDetails = ({ index, truck, updateTruck, removeTruck, count }) => {
   ];
 
   return (
-    <div className="col-span-full grid grid-cols-[30%_12.5%_12.5%_12.5%_12.5%_12.5%] p-4 bg-neutral-100 rounded-md shadow-sm shadow-neutral-300 border border-neutral-400 gap-4 relative">
+    <div className="col-span-full grid grid-col-1 lg:grid-cols-[30%_12.5%_12.5%_12.5%_12.5%_12.5%] p-4 bg-neutral-100 rounded-md shadow-sm shadow-neutral-300 border border-neutral-400 gap-4 relative">
       {count > 1 && (
         <button
           type="button"
@@ -85,7 +85,7 @@ const TruckDetails = ({ index, truck, updateTruck, removeTruck, count }) => {
 // Driver Details Component
 const DriverDetails = ({ index, driver, updateDriver, removeDriver, count }) => {
   return (
-    <div className="col-span-full grid grid-cols-3 p-4 bg-neutral-100 rounded-md shadow-sm shadow-neutral-300 border border-neutral-400 gap-4 relative">
+    <div className="col-span-full grid grid-col-1 lg:grid-cols-3 p-4 bg-neutral-100 rounded-md shadow-sm shadow-neutral-300 border border-neutral-400 gap-4 relative">
       {count > 1 && (
         <button
           type="button"
@@ -331,7 +331,7 @@ const CarriersSetup = () => {
   };
 
   return (
-    <div className='container py-20 flex flex-col gap-5'>
+    <div className='container py-10 lg:py-20 flex flex-col gap-5'>
       <H1 extraCss={'tracking-wider underline underline-offset-5 decoration-3 decoration-red-700'}>
         Carrier Setup
       </H1>
@@ -341,7 +341,7 @@ const CarriersSetup = () => {
         sure to attach your MC Authority, W-9, and Insurance documents below.
       </H3>
 
-      <form className='relative grid grid-cols-2 gap-x-8 gap-y-4' onSubmit={handleSubmission}>
+      <form className='relative flex flex-col lg:grid lg:grid-cols-2  gap-x-8 gap-y-4' onSubmit={handleSubmission}>
         {/* Company Name */}
         <div className='flex flex-col gap-2'>
           <label className='font-semibold tracking-wide relative w-fit'>
@@ -377,7 +377,7 @@ const CarriersSetup = () => {
         {/* Address Section */}
         <div className='col-span-full'>
           <h3 className='font-semibold tracking-wide mb-2'>Address</h3>
-          <div className='grid grid-cols-2 p-6 bg-neutral-100 rounded-md shadow-sm shadow-neutral-300 border border-neutral-400 gap-x-8 gap-y-4'>
+          <div className='flex flex-col lg:grid lg:grid-cols-2 p-6 bg-neutral-100 rounded-md shadow-sm shadow-neutral-300 border border-neutral-400 gap-x-8 gap-y-4'>
             <div className='flex flex-col gap-2'>
               <input 
                 type='text' 
@@ -668,7 +668,7 @@ const CarriersSetup = () => {
           </label>
           <p className='text-sm text-gray-600'>MC Letter, NOA, W9 Form, Certificate Of Liability Insurance, Driver's License</p>
           
-          <div className='grid grid-cols-4 gap-5'>
+          <div className='flex lg:grid flex-col lg:grid-cols-4 gap-5'>
             {/* MC Form */}
             <label 
               className={`cursor-pointer bg-neutral-100 py-3 px-3 border-2 border-dashed rounded-md min-h-[120px] flex flex-col items-center justify-center text-center text-sm transition-all hover:bg-neutral-200 ${
@@ -793,7 +793,7 @@ const CarriersSetup = () => {
 
               {carrierData.others && carrierData.others.length > 0 ? (
                 <div className="w-full">
-                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 w-full text-xs mb-2">
+                  <div className="flex flex-col lg:grid lg:grid-cols-4 gap-2 w-full text-xs mb-2">
                     {carrierData.others.map((file, index) => (
                       <div
                         key={index}

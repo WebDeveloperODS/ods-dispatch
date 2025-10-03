@@ -36,7 +36,7 @@ const ContactDetails = () => {
             return (
               <div 
                 key={index}
-                className='bg-fixed bg-cover bg-center rounded-xl shadow-lg shadow-neutral-300 hover:shadow-xl hover:shadow-neutral-400 transition-all duration-300 border border-neutral-200' style={{backgroundImage: 'url(/images/truck-types/bg.jpg'}}
+                className='bg-fixed bg-cover bg-center rounded-xl shadow-lg shadow-neutral-300 hover:shadow-xl hover:shadow-neutral-400 transition-all duration-300 border border-neutral-200' style={{backgroundImage: `url(${import.meta.env.VITE_IMAGES_SERVER}/images/truck-types/bg.jpg`}}
               >
                 <div className='flex flex-col items-center w-full h-full text-center gap-4 p-8 bg-neutral-700/50 rounded-xl'>
                     {/* Icon with Gradient Background */}

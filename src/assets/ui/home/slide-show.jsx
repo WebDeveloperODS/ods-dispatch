@@ -32,7 +32,7 @@ export default function SlideShow({children}){
                     }}
                 />
             ))}
-            <div className="relative z-2 h-full flex items-end justify-end pb-20 bg-neutral-700/20">
+            <div className="relative z-2 h-full flex items-end justify-end pb-8 lg:pb-20 bg-neutral-700/20">
                 {children}
             </div>
         </div>

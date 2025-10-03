@@ -86,7 +86,7 @@ export default function ContactForm(){
     };
 
     return(
-        <div className="w-full mt-24 ">
+        <div className="w-full mt-12 lg:mt-24 ">
             {/* Form Section */}
             <div 
                 className="container relative">
@@ -114,7 +114,7 @@ export default function ContactForm(){
                         </div>
                     )}
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div className="flex flex-col lg:grid lg:grid-cols-3 gap-4">
                         {/* Full Name */}
                         <div className="flex flex-col gap-1">
                             <label className="text-sm font-bold text-gray-700 flex items-center gap-1">
@@ -197,14 +197,14 @@ export default function ContactForm(){
 
                         {/* Truck Types */}
                         <div className="flex flex-col gap-3 col-span-full">
-                            <label className="text-sm font-bold text-gray-700 flex items-center gap-1">
+                            <label className="text-sm font-bold text-gray-700 flex flex-wrap items-center gap-1">
                                 <Truck className="h-4 w-4" />
                                 Type Of Truck(s) * <span className="text-xs font-normal ml-2">({formData.truckTypes.length} selected)</span>
                                 {formData.truckTypes.length === 0 && (
                                     <span className="text-xs text-red-500">Please select at least one truck type</span>
                                 )}
                             </label>
-                            <div className="grid grid-cols-2 md:grid-cols-6 gap-3">
+                            <div className="grid grid-cols-2 lg:grid-cols-6 gap-3">
                                 {truckTypes.map((truckType) => (
                                     <div key={truckType} className="flex items-center gap-2">
                                         <input 

@@ -10,7 +10,7 @@ const SocialMediaManagement = () => {
     <div>
       <ServiceIntro headline={'Turn Visibility Into Opportunity'}  
       descript={'In the trucking industry, a strong online presence goes far beyond likes and shares—it defines your reputation and sets you apart from competitors. At ODS Dispatch, we manage your social media with a strategic approach designed to showcase your professionalism, highlight your reliability, and keep your brand active where it matters most. '}
-      btnLink={'/'}
+      btnLink={'/carriers-setup'}
       btnText={`Let's get highlight socially`}
       image='url(/images/services/social-media/3.jpg)'
       />

@@ -9,7 +9,7 @@ const BusinessWebsiteDevelopment = () => {
     <div>
         <ServiceIntro headline={'Your Website, Your First Impression'}  
         descript={'In today’s digital-first world, your website is often the very first interaction potential shippers, brokers, or drivers have with your company. At ODS Dispatch, we design professional, responsive, and secure websites tailored specifically for trucking businesses to create lasting impressions.'}
-        btnLink={'/'}
+        btnLink={'/carriers-setup'}
         btnText={`Apply for web services`}
         image='url(/images/services/development/4.jpg)'
         />

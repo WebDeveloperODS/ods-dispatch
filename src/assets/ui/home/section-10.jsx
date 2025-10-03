@@ -81,12 +81,12 @@ export default function ContactForm(){
 
     return(
         <div className="w-full bg-gray-100 bg-cover bg-no-repeat bg-fixed relative">
-            <div className=" bg-cover bg-no-repeat bg-center bg-fixed absolute top-0 left-0 w-full h-full" style={{backgroundImage: `url(/images/home/map.png)`}}>
+            <div className=" bg-cover bg-no-repeat bg-center bg-fixed absolute top-0 left-0 w-full h-full" style={{backgroundImage: `url(${import.meta.env.VITE_IMAGES_SERVER}/images/home/map.png)`}}>
             </div>
 
             {/* Form Section */}
             <div 
-                className="container py-20">
+                className="container py-6 lg:py-20">
                 <div className="bg-white/90 backdrop-blur-sm text-center rounded-xl p-6 lg:p-8 shadow-xl">
                     <H2 extraCss={'underline underline-offset-4 decoration-3 decoration-red-600 text-gray-800 mb-2'}>
                         Get Connected With ODS
@@ -111,7 +111,7 @@ export default function ContactForm(){
                         </div>
                     )}
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div className="flex lg:grid flex-col lg:grid-cols-3 gap-4">
                         {/* Full Name */}
                         <div className="flex flex-col gap-1">
                             <label className="text-sm font-bold text-gray-700 flex items-center gap-1">
@@ -194,7 +194,7 @@ export default function ContactForm(){
 
                         {/* Truck Types */}
                         <div className="flex flex-col gap-3 col-span-full">
-                            <label className="text-sm font-bold text-gray-700 flex items-center gap-1">
+                            <label className="text-sm font-bold text-gray-700 flex flex-wrap items-center gap-1">
                                 <Truck className="h-4 w-4" />
                                 Type Of Truck(s) * <span className="text-xs font-normal ml-2">({formData.truckTypes.length} selected)</span>
                                 {formData.truckTypes.length === 0 && (
@@ -258,7 +258,7 @@ export default function ContactForm(){
                             </button>
                             
                             {!isFormValid() && !isSubmitting && (
-                                <p className="absolute left-0 bottom-2 right-0 text-xs text-gray-500 mt-2 text-center">
+                                <p className="absolute left-0 bottom-1 lg:bottom-2 right-0 text-xs text-gray-500 mt-2 text-center">
                                     Please fill all required fields to continue
                                 </p>
                             )}

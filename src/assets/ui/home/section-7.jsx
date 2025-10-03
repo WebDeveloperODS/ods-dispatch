@@ -23,7 +23,7 @@ export default function ODS_Best_Option(){
             <div className="hidden lg:block"/>
             
             {/* Right side - Video */}
-            <div className="relative min-h-96 lg:min-h-80">
+            <div className="relative min-h-85 lg:min-h-80">
                 <video 
                     className="w-full h-full object-cover"
                     autoPlay
@@ -33,15 +33,15 @@ export default function ODS_Best_Option(){
                     src={`${import.meta.env.VITE_IMAGES_SERVER}/images/home/home-video-1.mp4`}
                 />
                 {/* Video overlay */}
-                <div className="absolute inset-0 bg-blue-950/70"></div>
+                <div className="hidden lg:flex lg:absolute inset-0 bg-blue-950/70"></div>
             </div>
             
             {/* Absolute positioned content container */}
-            <div className="absolute inset-0 z-10">
-                <div className="container mx-auto h-full px-4 lg:px-8">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 h-full">
+            <div className="lg:absolute inset-0 z-10">
+                <div className="container mx-auto h-full p-4 lg:py-0 lg:px-8">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-16 h-full">
                         {/* Content section */}
-                        <div className="flex flex-col justify-center items-start gap-6">
+                        <div className="flex flex-col justify-center items-start gap-2 lg:gap-6">
                             <TagHead extraCss={'text-neutral-100 border-b-2 border-red-500 pb-1 flex gap-2 items-center'}>
                                 <ArrowRight className="h-4 w-auto stroke-3" /> About ODS
                             </TagHead>
@@ -61,17 +61,17 @@ export default function ODS_Best_Option(){
                             </P1>
                             
                             <div className="mt-4">
-                                <button className="bg-red-600 hover:bg-red-700 text-neutral-100 font-semibold py-3 px-8 rounded-lg transition-colors duration-300 flex items-center gap-2">
+                                <a href="/about-ods-dispatch" className="bg-red-600 hover:bg-red-700 text-neutral-100 font-semibold py-3 px-8 rounded-lg transition-colors duration-300 flex items-center gap-2">
                                     Learn More <ArrowRight className="h-4 w-4" />
-                                </button>
+                                </a>
                             </div>
                         </div>
                         
-                        <div className="flex flex-col justify-center items-start gap-10 ">
+                        <div className="flex flex-col justify-center items-start gap-5 lg:gap-10 ">
                             <H2 extraCss="text-neutral-100 tracking-wide underline decoration-2 underline-offset-5">Your Dispatch Edge from Day One</H2>
-                            <div className="flex flex-col gap-6">
+                            <div className="flex flex-col gap-2 lg:gap-6">
                                 {
-                                    Points.map((point,index) => <P1 extraClass="text-neutral-100 flex items-center gap-2 stroke-3 capitalize text-nowrap" key={index}><ChevronRightCircle className="w-5 h-auto stroke-3"/> {point.line}</P1>)
+                                    Points.map((point,index) => <P1 extraClass="text-neutral-100 flex lg:items-center gap-2 stroke-3 capitalize lg:text-nowrap" key={index}><ChevronRightCircle className="w-6 -mt-5 lg:mt-0 lg:w-5 h-auto stroke-3"/> {point.line}</P1>)
                                 }
                             </div>
                             <P1 extraClass="text-white capitalize tracking-wider font-[400]">{`Whether you’re expanding quickly or need steady support for night operations, ODS Dispatch is equipped to deliver results immediately.`}</P1>
