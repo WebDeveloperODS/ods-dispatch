@@ -61,8 +61,8 @@ const SideBar = ({removeWhite}) => {
                 </ul>
                 <div className='fixed flex flex-col px-10 gap-3 bottom-10 left-0 right-0'>
                     <a className="flex items-center tracking-wide font-semibold justify-between rounded-xl px-3 py-2 cursor-pointer text-white bg-blue-900 hover:bg-slate-900"
-                        href='tel:+19714727066'>
-                        (971) 472 7066
+                        href='tel:+18324301029'>
+                        (832) 430 1029
                         <Smartphone className="h-5 w-auto" /> 
                     </a>
                     <a className="flex items-center tracking-wide font-semibold justify-between rounded-xl px-3 py-2 cursor-pointer text-white bg-red-700 hover:bg-red-950"
