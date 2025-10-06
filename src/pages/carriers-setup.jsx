@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { H1, H3 } from '../assets/ui/components/heading-1';
+import { H1, H2, H3 } from '../assets/ui/components/heading-1';
 import { Trash2, Asterisk, X } from 'lucide-react';
 import { submitCarrierData } from '../assets/api/backend-api';
 import { FaTruckLoading } from 'react-icons/fa';
@@ -131,6 +131,7 @@ const DriverDetails = ({ index, driver, updateDriver, removeDriver, count }) => 
 // Main Component
 const CarriersSetup = () => {
   const [submission, setSubmission] = useState(false)
+  const [submissionStatus, setSubmissionStatus] = useState(null)
   const [carrierData, setCarrierData] = useState({
     companyName: '',
     dba: '',
@@ -252,20 +253,20 @@ const CarriersSetup = () => {
     e.preventDefault();
     setSubmission(true)
     // Custom validation for  files
-    const Files = [
-      { field: carrierData.mcImg, name: 'MC Form' },
-      { field: carrierData.noaImg, name: 'NOA Form' },
-      { field: carrierData.coiImg, name: 'Certificate Of Liability Insurance' },
-      { field: carrierData.w9Img, name: 'W9 Form' },
-      { field: carrierData.driverLicense, name: "Driver's License" }
-    ];
+    // const Files = [
+    //   { field: carrierData.mcImg, name: 'MC Form' },
+    //   { field: carrierData.noaImg, name: 'NOA Form' },
+    //   { field: carrierData.coiImg, name: 'Certificate Of Liability Insurance' },
+    //   { field: carrierData.w9Img, name: 'W9 Form' },
+    //   { field: carrierData.driverLicense, name: "Driver's License" }
+    // ];
 
-    const missingFiles = Files.filter(f => !f.field).map(f => f.name);
+    // const missingFiles = Files.filter(f => !f.field).map(f => f.name);
     
-    if (missingFiles.length > 0) {
-      alert(`Please upload the following  documents:\n- ${missingFiles.join('\n- ')}`);
-      return;
-    }
+    // if (missingFiles.length > 0) {
+    //   alert(`Please upload the following  documents:\n- ${missingFiles.join('\n- ')}`);
+    //   return;
+    // }
 
     const formData = new FormData();
 
@@ -317,14 +318,40 @@ const CarriersSetup = () => {
       });
 
       const data = await res.json();
-      
-      setCarrierData((prev) => ({...prev, mcImg: data.mcImg, noaImg: data.noaImg, coiImg:data.coiImg, driverLicense: data.driverLicense, w9Img: data.w9Img, others: data['others[]']}))
-      const response = await submitCarrierData(data);
+
+      // Build complete payload with form fields + uploaded file references
+      const payload = {
+        companyName: carrierData.companyName,
+        dba: carrierData.dba,
+        address: carrierData.address,
+        phone: carrierData.phone,
+        email: carrierData.email,
+        mcNo: carrierData.mcNo,
+        usdot: carrierData.usdot,
+        fein_ssn: carrierData.fein_ssn,
+        truckTypes: carrierData.truckTypes,
+        numberOfDrivers: carrierData.numberOfDrivers,
+        invoicesFactorization: carrierData.invoicesFactorization,
+        preferredStates: carrierData.preferredStates,
+        attachments: {
+          mcImg: data.mcImg,
+          noaImg: data.noaImg,
+          coiImg: data.coiImg,
+          w9Img: data.w9Img,
+          driverLicense: data.driverLicense,
+          others: data['others[]'] || []
+        }
+      };
+
+      const response = await submitCarrierData(payload);
       if(response){
         setSubmission(false)
+        setSubmissionStatus('success')              
+      } else{
+        setSubmission(false)
+        setSubmissionStatus('error')
       }
-      // Reset form on success
-      // window.scrollTo(0, 0);
+      
     } catch (err) {
       console.error("❌ Upload failed:", err);
       alert("Something went wrong. Please try again.");
@@ -344,7 +371,16 @@ const CarriersSetup = () => {
 
       <form className='relative flex flex-col lg:grid lg:grid-cols-2  gap-x-8 gap-y-4' onSubmit={handleSubmission}>
         {/* Company Name */}
-        <div className='flex flex-col gap-2'>
+        {submissionStatus === 'success' && (
+          <div className='bg-green-100 text-green-700 p-4 rounded-md shadow-sm text-center shadow-green-300 border border-green-400'>
+            <H2 extraCss={'tracking-wider underline underline-offset-5 decoration-3 decoration-green-700'}>
+              Thank you for submitting your carrier setup!
+            </H2>
+          </div>
+        )}
+        {submissionStatus === null && (
+          <>
+            <div className='flex flex-col gap-2'>
           <label className='font-semibold tracking-wide relative w-fit'>
             Company Name 
             <Asterisk className='w-3 h-auto text-red-700 absolute top-0 -right-3' />
@@ -353,6 +389,7 @@ const CarriersSetup = () => {
             type='text' 
             name='companyName' 
             id='companyName' 
+            required
             className='bg-neutral-100 py-2 px-3 border border-neutral-400 rounded-md' 
             placeholder='Company name...' 
             
@@ -384,6 +421,7 @@ const CarriersSetup = () => {
                 type='text' 
                 name='streetAddress' 
                 id='streetAddress' 
+                required
                 className='bg-neutral-50 py-2 px-3 border border-neutral-300 rounded-md' 
                 placeholder='Street 1...'
                 value={carrierData.address.streetAddress} 
@@ -413,6 +451,7 @@ const CarriersSetup = () => {
               <input 
                 type='text' 
                 name='city' 
+                required
                 id='city' 
                 className='bg-neutral-50 py-2 px-3 border border-neutral-300 rounded-md' 
                 placeholder='City...'
@@ -430,6 +469,7 @@ const CarriersSetup = () => {
               <input 
                 type='text' 
                 name='state' 
+                required
                 id='state' 
                 className='bg-neutral-50 py-2 px-3 border border-neutral-300 rounded-md' 
                 placeholder='State...'
@@ -446,6 +486,7 @@ const CarriersSetup = () => {
             <div className='flex flex-col gap-2'>
               <input 
                 type='text' 
+                required
                 name='zipCode' 
                 id='zipCode' 
                 className='bg-neutral-50 py-2 px-3 border border-neutral-300 rounded-md' 
@@ -468,6 +509,7 @@ const CarriersSetup = () => {
             type='email' 
             name='email' 
             id='email' 
+            required
             className='bg-neutral-100 py-2 px-3 border border-neutral-400 rounded-md' 
             placeholder='Email...' 
             
@@ -485,6 +527,7 @@ const CarriersSetup = () => {
           <input 
             type='tel' 
             name='phone' 
+            required
             id='phone' 
             className='bg-neutral-100 py-2 px-3 border border-neutral-400 rounded-md' 
             placeholder='(000) 000-0000'
@@ -503,6 +546,7 @@ const CarriersSetup = () => {
           <input 
             type='text' 
             name='mcNo' 
+            required
             id='mcNo' 
             className='bg-neutral-100 py-2 px-3 border border-neutral-400 rounded-md' 
             placeholder='MC#'
@@ -522,6 +566,7 @@ const CarriersSetup = () => {
             type='text' 
             name='usdot' 
             id='usdot' 
+            required
             className='bg-neutral-100 py-2 px-3 border border-neutral-400 rounded-md' 
             placeholder='USDOT#'
             
@@ -540,6 +585,7 @@ const CarriersSetup = () => {
             type='text' 
             name='fein_ssn' 
             id='fein_ssn' 
+            required
             className='bg-neutral-100 py-2 px-3 border border-neutral-400 rounded-md' 
             placeholder='FEIN / SSN'
             
@@ -620,6 +666,7 @@ const CarriersSetup = () => {
                 name='invoicesFactorization' 
                 id='invoicesFactorization-yes'
                 value='yes'
+                required
                 checked={carrierData.invoicesFactorization === 'yes'}
                 onChange={(e) => setCarrierData(prev => ({...prev, invoicesFactorization: e.target.value}))}
                 className='w-4 h-4 text-red-600 cursor-pointer'
@@ -636,6 +683,7 @@ const CarriersSetup = () => {
                 name='invoicesFactorization' 
                 id='invoicesFactorization-no'
                 value='no'
+                required
                 checked={carrierData.invoicesFactorization === 'no'}
                 onChange={(e) => setCarrierData(prev => ({...prev, invoicesFactorization: e.target.value}))}
                 className='w-4 h-4 text-red-600 cursor-pointer'
@@ -680,6 +728,7 @@ const CarriersSetup = () => {
               <input 
                 type='file' 
                 name='mcImg' 
+                required
                 id='mcImg' 
                 onChange={(e) => handleFileEntry(e, 'mcImg')} 
                 className='hidden' 
@@ -701,6 +750,7 @@ const CarriersSetup = () => {
               <input 
                 type='file' 
                 name='noaImg' 
+                required
                 id='noaImg' 
                 onChange={(e) => handleFileEntry(e, 'noaImg')} 
                 className='hidden' 
@@ -722,6 +772,7 @@ const CarriersSetup = () => {
               <input 
                 type='file' 
                 name='coiImg' 
+                required
                 id='coiImg' 
                 onChange={(e) => handleFileEntry(e, 'coiImg')} 
                 className='hidden' 
@@ -743,6 +794,7 @@ const CarriersSetup = () => {
               <input 
                 type='file' 
                 name='w9Img' 
+                required
                 id='w9Img' 
                 onChange={(e) => handleFileEntry(e, 'w9Img')} 
                 className='hidden' 
@@ -839,10 +891,18 @@ const CarriersSetup = () => {
             Submit Carrier Setup
           </button>
         </div>
+          </>
+        )}
         {
           submission ? <div className='fixed top-0 left-0 w-full h-full bg-neutral-800/60 flex flex-col items-center justify-center'>
             <ClipLoader size={60} color='white' speedMultiplier={0.75}  cssOverride={{borderWidth: '5px',}}/>
             <h3 className='text-white tracking-wider text-lg font-bold mt-3'>Submitting...</h3>
+          </div> : null
+        }
+        {
+          submissionStatus === 'error' ? <div className='fixed top-0 left-0 w-full h-full bg-neutral-800/60 flex flex-col items-center justify-center'>
+            <ClipLoader size={60} color='white' speedMultiplier={0.75}  cssOverride={{borderWidth: '5px',}}/>
+            <h3 className='text-white tracking-wider text-lg font-bold mt-3'>Something went wrong...</h3>
           </div> : null
         }
       </form>
