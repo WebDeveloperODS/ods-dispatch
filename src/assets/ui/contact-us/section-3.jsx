@@ -8,8 +8,8 @@ const ContactDetails = () => {
     {
       icon: Phone,
       title: 'Call Us At',
-      value: '(971) 472-7066',
-      href: 'tel:+19714727066',
+      value: '(832) 430 1029',
+      href: 'tel:+18324301029',
       type: 'phone'
     },
     {
