@@ -60,7 +60,7 @@ export default function Header() {
         <div className="container flex justify-end items-center gap-5 pt-[5px] pb-[2px]">
           <a href="mailto:info@odsdispatch.com" className="flex items-center gap-2 text-neutral-100 font-[500] text-sm hover:text-neutral-100 hover:stroke-3 cursor-pointer"><BiEnvelope className="w-[18px] h-auto stroke-1" />info@odsdispatch.com</a>
 
-          <a href="tel:+19714727066" className="flex items-center gap-2 text-neutral-100 font-[500] text-sm uppercase hover:text-neutral-100 hover:stroke-3 cursor-pointer"><PhoneCallIcon className="w-[16px] h-auto stroke-3"/> (971) 472 7066 </a>
+          <a href="tel:+18324301029" className="flex items-center gap-2 text-neutral-100 font-[500] text-sm uppercase hover:text-neutral-100 hover:stroke-3 cursor-pointer"><PhoneCallIcon className="w-[16px] h-auto stroke-3"/> (832) 430 1029 </a>
         </div>
       </div>
       <div className={`w-full transition-all ease-in-out duration-300 ${callSticky ? 'fixed top-0 z-50 bg-white py-1 translate-y-0 shadow-sm shadow-neutral-300': carriersCheck ? 'top-0 relative shadow-xs shadow-neutral-400':'absolute top-0 lg:top-7 z-10'} left-0 right-0 `}>
