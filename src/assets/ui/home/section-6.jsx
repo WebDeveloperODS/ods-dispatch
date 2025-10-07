@@ -60,7 +60,6 @@ export default function TruckTypes(){
     return(
         <div className="container py-24 flex flex-col items-center justify-center">
             <H2 extraCss={'uppercase underline underline-offset-5 decoration-3 decoration-red-800'}>Types Of Trucks ODS Deals With</H2>
-            {/* Menu */}
             <div className="flex flex-wrap gap-3 justify-center items-center my-5 ">
                 {
                     trucks.map((menu, index) => <button onClick={() => setActiveTitle(index)} className={`${activeTitle===index ? 'text-red-800':'text-neutral-600'} border-2 px-2 py-1 rounded-full cursor-pointer hover:bg-red-800 hover:text-white hover:border-transparent`} key={index}>{menu.title}</button>)
