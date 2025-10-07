@@ -20,7 +20,7 @@ const T_O_T_Descriptions = () => {
         id:'straight-box',
         description:
             'Straight box trucks, also known as box trucks or cube vans, are ideal for local and regional deliveries. ODS Dispatch helps box truck operators find consistent freight opportunities tailored to their capacity and routes.',
-        image: `${import.meta.env.VITE_IMAGES_SERVER}/images/truck-types/straight-box.jpg`,
+        image: `${import.meta.env.VITE_IMAGES_SERVER}/images/truck-types/straight-box.png`,
         },
         {
         label: 'Flatbed',
