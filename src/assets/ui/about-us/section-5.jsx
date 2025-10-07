@@ -36,7 +36,7 @@ export default function BenefitsbyODS() {
       <div className="w-full h-full flex flex-col gap-6 md:gap-8 items-center justify-center bg-neutral-600/50 rounded-xl text-center px-4 py-12 md:py-16">
         
         {/* Heading */}
-        <H2 extraCss="tracking-wider uppercase font-bold text-neutral-100 drop-shadow-lg underline lg:underline-offset-8 decoration-4 decoration-red-700 px-4">
+        <H2 extraCss="tracking-wider uppercase font-bold text-neutral-100 drop-shadow-lg underline lg:underline-offset-3 decoration-4 decoration-red-700 px-4">
           Benefits of Social Media <br className="hidden lg:block" />
           Marketing for Trucking Companies
         </H2>

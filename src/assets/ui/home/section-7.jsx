@@ -14,6 +14,10 @@ export default function ODS_Best_Option(){
         },{
             line:'Reliable, compliance-ready reporting and timely updates'
         },{
+            line:'Paperwork management for smooth documentation and reduced administrative load'
+        },{
+            line:'Border crossing handling to ensure uninterrupted operations across regions'
+        },{
             line: 'ODS Dispatch experts trained and prepared from the start'
         }
     ]
