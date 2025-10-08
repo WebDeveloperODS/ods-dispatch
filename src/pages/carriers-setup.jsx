@@ -3,7 +3,7 @@ import { H1, H2, H3 } from '../assets/ui/components/heading-1';
 import { Trash2, Asterisk, X } from 'lucide-react';
 import { submitCarrierData } from '../assets/api/backend-api';
 import { FaTruckLoading } from 'react-icons/fa';
-import { ClipLoader } from 'react-spinners';
+import ClipLoader from 'react-spinners/ClipLoader';
 
 // Truck Details Component
 const TruckDetails = ({ index, truck, updateTruck, removeTruck, count }) => {
