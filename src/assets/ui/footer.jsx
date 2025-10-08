@@ -7,7 +7,7 @@ import { MailIcon } from "lucide-react"
 import { MapPin } from "lucide-react"
 import { Facebook } from "lucide-react"
 import { Instagram } from "lucide-react"
-import { LinkedinIcon } from "lucide-react"
+// import { LinkedinIcon } from "lucide-react"
 
 
 const Footer = () => {
@@ -71,15 +71,15 @@ const Footer = () => {
               </a>
               <H3 extraCss={'text-neutral-100 font-bold capitalize tracking-wider'}>Follow us at</H3>
               <div className="flex gap-3 text-neutral-100 -mt-2">
-                <a className="p-1 rounded-xl border-2 hover:bg-red-800 hover:border-transparent hover:stroke-4 cursor-pointer transition-all duration-300 ease-in-out hover:scale-[1.1]">
+                <a href="https://www.facebook.com/odsdispatch" className="p-1 rounded-xl border-2 hover:bg-red-800 hover:border-transparent hover:stroke-4 cursor-pointer transition-all duration-300 ease-in-out hover:scale-[1.1]">
                   <Facebook className="h-5 w-auto "/>
                 </a>
-                <a className="p-1 rounded-xl border-2 hover:bg-red-800 hover:border-transparent hover:stroke-4 cursor-pointer transition-all duration-300 ease-in-out hover:scale-[1.1]">
+                <a href="https://www.instagram.com/ods_dispatch27/?hl=en" className="p-1 rounded-xl border-2 hover:bg-red-800 hover:border-transparent hover:stroke-4 cursor-pointer transition-all duration-300 ease-in-out hover:scale-[1.1]">
                   <Instagram className="h-5 w-auto "/>
                 </a>
-                <a className="p-1 rounded-xl border-2 hover:bg-red-800 hover:border-transparent hover:stroke-4 cursor-pointer transition-all duration-300 ease-in-out hover:scale-[1.1]">
+                {/* <a className="p-1 rounded-xl border-2 hover:bg-red-800 hover:border-transparent hover:stroke-4 cursor-pointer transition-all duration-300 ease-in-out hover:scale-[1.1]">
                   <LinkedinIcon className="h-5 w-auto "/>
-                </a>
+                </a> */}
               </div>
             </div>
         </div>
