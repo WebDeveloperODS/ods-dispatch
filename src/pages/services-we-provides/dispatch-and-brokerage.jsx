@@ -3,6 +3,7 @@ import ServiceIntro from '../../assets/ui/services-by-ods/section-1'
 import ServicePlusPoint from '../../assets/ui/services-by-ods/section-2'
 import GettingStartedWithODS from '../../assets/ui/home/section-8'
 import TestimonialsDisplay from '../../assets/ui/home/section-9'
+import Seo from '../../assets/ui/components/Seo'
 
 const DispatchAndBrokerage = () => {
   const onClickFunc = () => {
@@ -10,6 +11,12 @@ const DispatchAndBrokerage = () => {
   }
   return (
     <div>
+      <Seo
+        title={'Truck Dispatch & Freight Brokerage Services | ODS Dispatch'}
+        description={'We find loads, negotiate rates, manage paperwork, and keep your trucks moving profitably. Full-service dispatching and brokerage for carriers and owner-operators.'}
+        path={'/services-by-ods/dispatch-and-brokerage'}
+        image={'/images/services/dispatch/1.jpg'}
+      />
       <ServiceIntro headline={'Keep Your Trucks Moving, Profitably'}
       descript={'At ODS Dispatch, we understand that every mile matters. Our dispatch and brokerage services are designed to keep your trucks loaded with consistent, high-paying freight so you can maximize revenue and reduce downtime.'} 
       btnLink={'/carrier-setup'} 

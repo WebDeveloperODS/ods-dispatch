@@ -3,10 +3,17 @@ import ServiceIntro from '../../assets/ui/services-by-ods/section-1'
 import ServicePlusPoint from '../../assets/ui/services-by-ods/section-2'
 import GettingStartedWithODS from '../../assets/ui/home/section-8'
 import TestimonialsDisplay from '../../assets/ui/home/section-9'
+import Seo from '../../assets/ui/components/Seo'
 
 const BusinessWebsiteDevelopment = () => {
   return (
     <div>
+        <Seo
+          title={'Trucking Website Development | ODS Dispatch'}
+          description={'Professional, responsive, and secure websites for carriers and fleets. Full-stack solutions tailored for trucking.'}
+          path={'/services-by-ods/business-web-development'}
+          image={'/images/services/development/4.jpg'}
+        />
         <ServiceIntro headline={'Your Website, Your First Impression'}  
         descript={'In today’s digital-first world, your website is often the very first interaction potential shippers, brokers, or drivers have with your company. At ODS Dispatch, we design professional, responsive, and secure websites tailored specifically for trucking businesses to create lasting impressions.'}
         btnLink={'/carriers-setup'}

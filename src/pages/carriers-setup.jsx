@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Seo from '../assets/ui/components/Seo'
 import { H1, H2, H3 } from '../assets/ui/components/heading-1';
 import { Trash2, Asterisk, X } from 'lucide-react';
 import { submitCarrierData } from '../assets/api/backend-api';
@@ -360,6 +361,12 @@ const CarriersSetup = () => {
 
   return (
     <div className='container py-10 lg:py-20 flex flex-col gap-5'>
+      <Seo
+        title={'Carrier Setup Form | ODS Dispatch'}
+        description={'Complete the carrier setup form to get onboarded with ODS Dispatch. Share company details, documents, and preferences to start dispatching.'}
+        path={'/carriers-setup'}
+        image={'/images/services/dispatch/2.png'}
+      />
       <H1 extraCss={'tracking-wider underline underline-offset-5 decoration-3 decoration-red-700'}>
         Carrier Setup
       </H1>

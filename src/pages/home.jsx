@@ -1,4 +1,5 @@
 import React from 'react'
+import Seo from '../assets/ui/components/Seo'
 import IntroWithSlider from '../assets/ui/home/section-1'
 import WhoWeAre from '../assets/ui/home/section-2'
 import ThreeContents from '../assets/ui/home/section-3'
@@ -14,6 +15,29 @@ import WhyNeedSocialMedia from '../assets/ui/home/section-11'
 const Home = () => {
   return (
     <div className='bg-white'>
+      <Seo
+        title={'ODS Dispatch | Truck Dispatching, Brokerage & Carrier Services'}
+        description={'Professional truck dispatching, load booking, rate negotiation, paperwork, and carrier setup services. Keep your trucks moving profitably with ODS Dispatch.'}
+        path={'/'}
+        image={'/images/home/19.jpg'}
+        type={'website'}
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'Organization',
+          name: 'ODS Dispatch',
+          url: typeof window !== 'undefined' ? window.location.origin : undefined,
+          logo: '/logo-3.png',
+          sameAs: [
+            'https://www.facebook.com/',
+            'https://www.instagram.com/'
+          ],
+          contactPoint: {
+            '@type': 'ContactPoint',
+            contactType: 'customer support',
+            email: 'info@ods-dispatch.com',
+          }
+        }}
+      />
       <IntroWithSlider />
       <WhoWeAre />
       <ThreeContents />
