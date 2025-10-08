@@ -5,19 +5,4 @@ import tailwindcss from '@tailwindcss/vite'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  optimizeDeps: {
-    include: [
-      'react-spinners/BarLoader',
-      // add any other loaders you actually use
-    ]
-  },
-  build: {
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          'react-spinners': ['react-spinners/BarLoader'],
-        }
-      }
-    }
-  }
 })
