@@ -313,7 +313,7 @@ const CarriersSetup = () => {
   });
 
     try {
-      const res = await fetch("https://lightslategrey-partridge-939447.hostingersite.com/uploads.php", {
+      const res = await fetch(`${import.meta.env.VITE_UPLOAD_IMAGE_SERVER}`, {
         method: "POST",
         body: formData
       });
