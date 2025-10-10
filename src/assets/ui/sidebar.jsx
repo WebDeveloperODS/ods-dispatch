@@ -3,6 +3,9 @@ import { Menu, ChevronRight, ChevronRightCircle, Mail, X, Smartphone } from 'luc
 import { HeaderMenu } from '../../lib/headerMenu'
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
+import { FcDocument } from 'react-icons/fc'
+import { File } from 'lucide-react'
+import { FilesIcon } from 'lucide-react'
 const SideBar = ({removeWhite}) => {
     const [open, setOpen] = useState(false)
     const [hover, setHover]= useState(-1)
@@ -30,7 +33,7 @@ const SideBar = ({removeWhite}) => {
                     <X className='text-white stroke-[3]'/>
                 </div>
                 <img className='h-44 w-auto mx-auto my-5' src='/images/logo-3.png' alt='Logo'/>
-                <ul className='flex flex-col px-10 gap-3'>
+                <ul className='flex flex-col px-6 gap-3'>
                     {
                         HeaderMenu.map((item,index) => 
                             <li key={index}>
@@ -60,9 +63,19 @@ const SideBar = ({removeWhite}) => {
                     }
                 </ul>
                 <div className='fixed flex flex-col px-10 gap-3 bottom-10 left-0 right-0'>
-                    <a className="flex items-center tracking-wide font-semibold justify-between rounded-xl px-3 py-2 cursor-pointer text-white bg-blue-900 hover:bg-slate-900"
-                        href='tel:+18324301029'>
-                        (832) 430 1029
+                    <a className="flex items-center tracking-wide font-bold justify-between px-3 pb-1 mb-1 border-b-2 border-red-700 cursor-pointer text-slate-900"
+                        href='/carriers-setup'>
+                        Carrier Setup
+                        <FilesIcon className="h-5 w-auto stroke-3" /> 
+                    </a>
+                    <a className="flex items-center tracking-wide font-semibold justify-between rounded-xl px-3 py-2 cursor-pointer text-white bg-slate-900 hover:bg-slate-900"
+                        href='tel:+16899999307'>
+                        (689) 999 9307
+                        <Smartphone className="h-5 w-auto" /> 
+                    </a>
+                    <a className="flex items-center tracking-wide font-semibold justify-between rounded-xl px-3 py-2 cursor-pointer text-white bg-slate-600 hover:bg-slate-900"
+                        href='tel:+16679777041'>
+                        (667) 977 7041
                         <Smartphone className="h-5 w-auto" /> 
                     </a>
                     <a className="flex items-center tracking-wide font-semibold justify-between rounded-xl px-3 py-2 cursor-pointer text-white bg-red-700 hover:bg-red-950"

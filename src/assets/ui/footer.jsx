@@ -36,7 +36,7 @@ const Footer = () => {
   ]
   return (
     <div className='bg-slate-900'>
-        <div className='container flex flex-col lg:grid lg:grid-cols-[30%_20%_20%_30%] gap-8 pt-15 pb-10'>
+        <div className='container flex flex-col lg:grid lg:grid-cols-[30%_19%_19%_31%] gap-8 pt-15 pb-10'>
             <div className="flex flex-col gap-2">
               <H2 extraCss={'text-neutral-100 font-bold uppercase underline underline-offset-3 decoration-3 decoration-red-800 tracking-wider'}>ODS Dispatch</H2>
               <P2 extraClass="text-neutral-100 font-light capitalize tracking-wide">
@@ -58,8 +58,12 @@ const Footer = () => {
             <div className="flex flex-col gap-3">
               <H3 extraCss={'text-neutral-100 font-bold capitalize tracking-wider'}>Others</H3>
               <a className="text-neutral-100 flex items-start gap-2 w-fit underline decoration-1 decoration-transparent underline-offset-6 transition-all ease-in-out duration-300 hover:scale-[1.05] hover:decoration-red-800"
-                href={'tel:+18324301029'}>
-                <PhoneCall className="h-4 w-auto mt-[0.175em]" /> (832) 430 1029
+                href={'tel:+16899999307'}>
+                <PhoneCall className="h-4 w-auto mt-[0.175em]" /> (689) 999 9307
+              </a>
+              <a className="text-neutral-100 flex items-start gap-2 w-fit underline decoration-1 decoration-transparent underline-offset-6 transition-all ease-in-out duration-300 hover:scale-[1.05] hover:decoration-red-800"
+                href={'tel:+16679777041'}>
+                <PhoneCall className="h-4 w-auto mt-[0.175em]" /> (667) 977 7041
               </a>
               <a className="text-neutral-100 flex items-start gap-2 w-fit underline decoration-1 decoration-transparent underline-offset-6 transition-all ease-in-out duration-300 hover:scale-[1.05] hover:decoration-red-800"
                 href={'mailto:info@odsdispatch.com'}>
@@ -67,7 +71,7 @@ const Footer = () => {
               </a>
               <a className="text-neutral-100 flex items-start gap-2 w-fit underline decoration-1 decoration-transparent underline-offset-6 transition-all ease-in-out duration-300 hover:scale-[1.05] hover:decoration-red-800"
                 href={''}>
-                <MapPin className="h-4 w-auto mt-[0.175em]" /> 3911 concord pike, Wilmington, DE, USA - 19803
+                <MapPin className="h-4 w-auto mt-[0.175em]" /> 3911 Concord Pike, Wilmington, DE, USA - 19803
               </a>
               <H3 extraCss={'text-neutral-100 font-bold capitalize tracking-wider'}>Follow us at</H3>
               <div className="flex gap-3 text-neutral-100 -mt-2">
