@@ -7,9 +7,16 @@ const ContactDetails = () => {
   const contactInfo = [
     {
       icon: Phone,
-      title: 'Call Us At',
-      value: '(832) 430 1029',
-      href: 'tel:+18324301029',
+      title: 'Contact# 01',
+      value: '(689) 999 9307',
+      href: 'tel:+16899999307',
+      type: 'phone'
+    },
+    {
+      icon: Phone,
+      title: 'Contact# 02',
+      value: '(667) 977 7041',
+      href: 'tel:+16679777041',
       type: 'phone'
     },
     {
@@ -29,8 +36,8 @@ const ContactDetails = () => {
   ];
 
   return (
-    <div className='container mx-auto px-4 py-20'>    
-      <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
+    <div className='container mx-auto py-20'>    
+      <div className='grid grid-cols-1 lg:grid-cols-4 gap-4'>
           {contactInfo.map((contact, index) => {
             const IconComponent = contact.icon;
             return (
@@ -38,7 +45,7 @@ const ContactDetails = () => {
                 key={index}
                 className='bg-fixed bg-cover bg-center rounded-xl shadow-lg shadow-neutral-300 hover:shadow-xl hover:shadow-neutral-400 transition-all duration-300 border border-neutral-200' style={{backgroundImage: `url(${import.meta.env.VITE_IMAGES_SERVER}/images/truck-types/bg.jpg`}}
               >
-                <div className='flex flex-col items-center w-full h-full text-center gap-4 p-8 bg-neutral-700/50 rounded-xl'>
+                <div className='flex flex-col items-center w-full h-full text-center gap-4 p-4 bg-neutral-700/50 rounded-xl'>
                     {/* Icon with Gradient Background */}
                     <div className='w-20 h-20 bg-gradient-to-br from-red-700 to-red-950 rounded-full flex items-center justify-center shadow-lg'>
                         <IconComponent className='w-10 h-10 text-white' strokeWidth={2} />
