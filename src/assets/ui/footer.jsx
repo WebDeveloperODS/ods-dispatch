@@ -57,13 +57,10 @@ const Footer = () => {
             </div>
             <div className="flex flex-col gap-3">
               <H3 extraCss={'text-neutral-100 font-bold capitalize tracking-wider'}>Others</H3>
+              
               <a className="text-neutral-100 flex items-start gap-2 w-fit underline decoration-1 decoration-transparent underline-offset-6 transition-all ease-in-out duration-300 hover:scale-[1.05] hover:decoration-red-800"
-                href={'tel:+16899999307'}>
-                <PhoneCall className="h-4 w-auto mt-[0.175em]" /> (689) 999 9307
-              </a>
-              <a className="text-neutral-100 flex items-start gap-2 w-fit underline decoration-1 decoration-transparent underline-offset-6 transition-all ease-in-out duration-300 hover:scale-[1.05] hover:decoration-red-800"
-                href={'tel:+16679777041'}>
-                <PhoneCall className="h-4 w-auto mt-[0.175em]" /> (667) 977 7041
+                href={'tel:+13012024083'}>
+                <PhoneCall className="h-4 w-auto mt-[0.175em]" /> (301) 202 4083
               </a>
               <a className="text-neutral-100 flex items-start gap-2 w-fit underline decoration-1 decoration-transparent underline-offset-6 transition-all ease-in-out duration-300 hover:scale-[1.05] hover:decoration-red-800"
                 href={'mailto:info@odsdispatch.com'}>

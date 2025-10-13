@@ -7,16 +7,9 @@ const ContactDetails = () => {
   const contactInfo = [
     {
       icon: Phone,
-      title: 'Contact# 01',
-      value: '(689) 999 9307',
-      href: 'tel:+16899999307',
-      type: 'phone'
-    },
-    {
-      icon: Phone,
-      title: 'Contact# 02',
-      value: '(667) 977 7041',
-      href: 'tel:+16679777041',
+      title: 'Contact Us',
+      value: '(301) 202 4083',
+      href: 'tel:+13012024083',
       type: 'phone'
     },
     {
@@ -37,7 +30,7 @@ const ContactDetails = () => {
 
   return (
     <div className='container mx-auto py-20'>    
-      <div className='grid grid-cols-1 lg:grid-cols-4 gap-4'>
+      <div className='grid grid-cols-1 lg:grid-cols-3 gap-4'>
           {contactInfo.map((contact, index) => {
             const IconComponent = contact.icon;
             return (

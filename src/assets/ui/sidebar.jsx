@@ -69,13 +69,8 @@ const SideBar = ({removeWhite}) => {
                         <FilesIcon className="h-5 w-auto stroke-3" /> 
                     </a>
                     <a className="flex items-center tracking-wide font-semibold justify-between rounded-xl px-3 py-2 cursor-pointer text-white bg-slate-900 hover:bg-slate-900"
-                        href='tel:+16899999307'>
-                        (689) 999 9307
-                        <Smartphone className="h-5 w-auto" /> 
-                    </a>
-                    <a className="flex items-center tracking-wide font-semibold justify-between rounded-xl px-3 py-2 cursor-pointer text-white bg-slate-600 hover:bg-slate-900"
-                        href='tel:+16679777041'>
-                        (667) 977 7041
+                        href='tel:+13012024083'>
+                        (301) 202 4083
                         <Smartphone className="h-5 w-auto" /> 
                     </a>
                     <a className="flex items-center tracking-wide font-semibold justify-between rounded-xl px-3 py-2 cursor-pointer text-white bg-red-700 hover:bg-red-950"
