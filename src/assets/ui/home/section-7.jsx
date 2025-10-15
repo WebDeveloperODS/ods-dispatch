@@ -75,7 +75,7 @@ export default function ODS_Best_Option(){
                             <H2 extraCss="text-neutral-100 tracking-wide underline decoration-2 underline-offset-5">Your Dispatch Edge from Day One</H2>
                             <div className="flex flex-col gap-2 lg:gap-6">
                                 {
-                                    Points.map((point,index) => <P1 extraClass="text-neutral-100 flex lg:items-center gap-2 stroke-3 capitalize lg:text-nowrap" key={index}><ChevronRightCircle className="w-6 -mt-5 lg:mt-0 lg:w-5 h-auto stroke-3"/> {point.line}</P1>)
+                                    Points.map((point,index) => <P1 extraClass="text-neutral-100 inline-flex gap-2 items-start stroke-3 capitalize " key={index}><ChevronRightCircle className="w-6 lg:w-5 h-auto stroke-3 mt-1 flex-shrink-0"/> {point.line}</P1>)
                                 }
                             </div>
                             <P1 extraClass="text-white capitalize tracking-wider font-[400]">{`Whether you’re expanding quickly or need steady support for night operations, ODS Dispatch is equipped to deliver results immediately.`}</P1>
