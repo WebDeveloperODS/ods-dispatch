@@ -8,6 +8,8 @@ import TruckTypes from './pages/truck-types'
 import DispatchAndBrokerage from './pages/services-we-provides/dispatch-and-brokerage'
 import SocialMediaManagement from './pages/services-we-provides/social-media-management'
 import BusinessWebsiteDevelopment from './pages/services-we-provides/business-website'
+import Portfolio from './pages/portfolio'
+import ServiceApplication from './pages/service-application'
 
 const App = () => {
   return (
@@ -20,6 +22,8 @@ const App = () => {
         <Route path="/services-by-ods/social-media-management" element={ <SocialMediaManagement/>} />
         <Route path="/services-by-ods/business-web-development" element={ <BusinessWebsiteDevelopment/>} />
         <Route path="/carriers-setup" element={<CarriersSetup />} />
+        <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/application-to-avail-services" element={<ServiceApplication />} />
         <Route path="/to-contact-ods-dispatch" element={<ContactUs />} />
       </Routes>
     </WebLayout>

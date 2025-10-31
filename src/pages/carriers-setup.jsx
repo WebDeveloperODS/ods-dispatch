@@ -360,7 +360,7 @@ const CarriersSetup = () => {
   };
 
   return (
-    <div className='container py-10 lg:py-20 flex flex-col gap-5'>
+    <div className='container py-10 min-h-120 lg:py-20 flex flex-col gap-5'>
       <Seo
         title={'Carrier Setup Form | ODS Dispatch'}
         description={'Complete the carrier setup form to get onboarded with ODS Dispatch. Share company details, documents, and preferences to start dispatching.'}

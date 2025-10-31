@@ -3,8 +3,6 @@ import { Menu, ChevronRight, ChevronRightCircle, Mail, X, Smartphone } from 'luc
 import { HeaderMenu } from '../../lib/headerMenu'
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
-import { FcDocument } from 'react-icons/fc'
-import { File } from 'lucide-react'
 import { FilesIcon } from 'lucide-react'
 const SideBar = ({removeWhite}) => {
     const [open, setOpen] = useState(false)

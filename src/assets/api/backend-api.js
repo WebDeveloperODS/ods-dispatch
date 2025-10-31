@@ -12,11 +12,11 @@ const sendFormData = async(
 ) => axios.post(`${SERVER}/new-contact-form`,{fullName,companyName, companyEmail, contactNumber, companyAddress, truckTypes, additionalInfo}).then(response => response.status)
 
 
-const submitCarrierData = async (carrierData) => {
+const submitCarrierData = async (carrierDate) => {
   try {
     const response = await axios.post(
       `${SERVER}/new-carrier-addition`,
-      carrierData, // JSON payload
+      carrierDate, // JSON payload
       {
         headers: { "Content-Type": "application/json" },
       }
@@ -27,6 +27,21 @@ const submitCarrierData = async (carrierData) => {
     throw err;
   }
 };
+const submitApplicationData = async (applicationDate) => {
+  try {
+    const response = await axios.post(
+      `${SERVER}/service-application`,
+      applicationDate, // JSON payload
+      {
+        headers: { "Content-Type": "application/json" },
+      }
+    );
+    return response.data;
+  } catch (err) {
+    console.error("Submit application data failed:", err);
+    throw err;
+  }
+};
 
 
-export {sendFormData, submitCarrierData}
+export {sendFormData, submitCarrierData, submitApplicationData}
