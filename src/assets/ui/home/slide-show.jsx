@@ -3,10 +3,14 @@ import { useState } from "react"
 
 export default function SlideShow({children}){
     const SERVER = import.meta.env.VITE_IMAGES_SERVER
-    const BgImages = [
+    const BgImages = window.innerWidth >= 1024 ? [
         `${SERVER}/images/home/1.jpg`,
         `${SERVER}/images/home/2.jpg`,
         `${SERVER}/images/home/3.jpg`,
+    ] : [
+        `${SERVER}/images/home/1-m.png`,
+        `${SERVER}/images/home/2-m.png`,
+        `${SERVER}/images/home/3-m.png`,
     ]
     const [currentSlide, setCurrentSlide] = useState(0);
     useEffect(() => {

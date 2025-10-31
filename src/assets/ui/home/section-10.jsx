@@ -120,6 +120,7 @@ export default function ContactForm(){
                             </label>
                             <input 
                                 name="fullName" 
+                                id="fullName" 
                                 type="text" 
                                 value={formData.fullName}
                                 onChange={handleInputChange}
@@ -136,6 +137,7 @@ export default function ContactForm(){
                             </label>
                             <input 
                                 name="companyName" 
+                                id="companyName" 
                                 type="text" 
                                 value={formData.companyName}
                                 onChange={handleInputChange}
@@ -152,6 +154,7 @@ export default function ContactForm(){
                             </label>
                             <input 
                                 name="companyEmail" 
+                                id="companyEmail" 
                                 type="email" 
                                 value={formData.companyEmail}
                                 onChange={handleInputChange}
@@ -168,6 +171,7 @@ export default function ContactForm(){
                             </label>
                             <input 
                                 name="contactNumber" 
+                                id="contactNumber" 
                                 type="tel" 
                                 value={formData.contactNumber}
                                 onChange={handleInputChange}
@@ -184,6 +188,7 @@ export default function ContactForm(){
                             </label>
                             <input 
                                 name="companyAddress" 
+                                id="companyAddress" 
                                 type="text" 
                                 value={formData.companyAddress}
                                 onChange={handleInputChange}
@@ -205,6 +210,8 @@ export default function ContactForm(){
                                 {truckTypes.map((truckType) => (
                                     <div key={truckType} className="flex items-center gap-2">
                                         <input 
+                                            name={`checkbox-${truckType}`}
+                                            id={`checkbox-${truckType}`}
                                             type="checkbox" 
                                             checked={formData.truckTypes.includes(truckType)}
                                             onChange={() => handleTruckTypeChange(truckType)}
@@ -229,6 +236,7 @@ export default function ContactForm(){
                             </label>
                             <textarea 
                                 name="additionalInfo" 
+                                id="additionalInfo" 
                                 value={formData.additionalInfo}
                                 onChange={handleInputChange}
                                 placeholder="Tell us more about your business needs, fleet size, typical routes, etc..." 

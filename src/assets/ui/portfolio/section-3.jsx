@@ -2,7 +2,7 @@ import { PageButton } from '../components/buttons'
 
 const TruckingExcellence = () => {
       return (
-            <div className={`container relative bg-cover bg-bottom lg:bg-center min-h-150 lg:min-h-120 w-full rounded-xl shadow-lg shadow-neutral-400 mb-20!`} style={{backgroundImage: window.innerWidth >= 1024 ? `url(/images/portfolio/7.jpg)` : `url(/images/portfolio/8.jpg)`}}>
+            <div className={`container relative bg-cover bg-bottom lg:bg-center min-h-150 lg:min-h-120 w-full rounded-xl shadow-lg shadow-neutral-400 mb-20!`} style={{backgroundImage: window.innerWidth >= 1024 ? `url(${import.meta.env.VITE_IMAGES_SERVER}/images/portfolio/7.jpg)` : `url(${import.meta.env.VITE_IMAGES_SERVER}/images/portfolio/8.jpg)`}}>
                   <div className='absolute top-0 left-0 h-full w-full flex flex-col lg:flex-row items-center justify-end rounded-xl bg-linear-to-b lg:bg-linear-to-r from-transparent from-20% to-100% to-neutral-800/80'>
                         <div className='py-10 px-6 lg:p-10 w-full lg:max-w-[45%] h-full rounded-xl lg:rounded-r-xl flex items-start justify-end lg:justify-center flex-col gap-3 lg:gap-5'>
                               <h2 className={'font-extrabold text-neutral-50 text-shadow-xs text-shadow-black text-xl lg:text-3xl uppercase'}>Your Digital Highway to Trucking Excellence</h2>
