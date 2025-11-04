@@ -46,7 +46,7 @@ export default function PointingServices(){
         <div className="bg-gray-100 w-full relative ">
             <div className={`bg-center bg-contain bg-no-repeat bg-fixed w-full h-full`} style={{backgroundImage: `url(${import.meta.env.VITE_IMAGES_SERVER}/images/home/map.png)`}}>
                 <div className="container flex flex-col items-center py-24 gap-3">
-                    <H2 extraCss={'uppercase underline underline-offset-5 decoration-3 text-center decoration-red-800'}>Your Success, Our Dispatch Mission</H2>
+                    <H2 extraCss={'uppercase underline underline-offset-5 decoration-3 text-center decoration-red-800'}>Your Success, Our Mission</H2>
                     <P1 extraClass="capitalize tracking-wider font-[500]  text-center">
                         With expert dispatchers and tailored solutions, we help carriers grow sustainably long term.
                     </P1>

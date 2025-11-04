@@ -27,7 +27,7 @@ export default function WhoWeAre(){
                 <P1 extraClass="capitalize tracking-wide">
                 With <span className="font-extrabold! text-red-800">ODS Dispatch</span>, truck drivers and carriers gain access to reliable freight opportunities that pay well. We handle booking, negotiating, and planning while offering real-time support—helping you reduce downtime, increase revenue, and focus on delivering safely.
                 </P1>
-                <TagHead extraCss={'underline underline-offset-3 decoration-2 decoration-red-800'}>To get benify with business growth</TagHead>
+                <TagHead extraCss={'underline underline-offset-3 decoration-2 decoration-red-800'}>Benify with business growth</TagHead>
                 <form className="grid grid-cols-1 lg:grid-cols-2 gap-x-5 gap-y-3">
                     <h4 className="col-span-full capitalize text-md xl:text-lg font-semibold">Share your details and we will reach back tou you.</h4>
                     <div className="flex flex-col gap-1">

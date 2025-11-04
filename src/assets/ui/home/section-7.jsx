@@ -41,7 +41,7 @@ export default function ODS_Best_Option(){
             </div>
             
             {/* Absolute positioned content container */}
-            <div className="lg:absolute inset-0 z-10">
+            <div className="lg:absolute top-0 left-0 bottom-0 h-full inset-0 z-10">
                 <div className="container mx-auto h-full p-4 lg:py-0 lg:px-8">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-16 h-full">
                         {/* Content section */}
